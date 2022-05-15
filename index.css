@@ -797,10 +797,6 @@
 
 
 /*#region CONTENT Card sizes*/
-    .LargeCard
-    {
-        width: 40rem;
-    }
     .LargeCard img
     {
         aspect-ratio: 752 / 359;
@@ -808,7 +804,7 @@
     }
     .MediumCard
     {
-        width: 22rem;
+        width: 21rem;
     }
     .MediumCard img
     {
@@ -826,6 +822,43 @@
         border-top-left-radius: 0.3rem;
         border-top-right-radius: 0.3rem;
     }
+
+    @media only screen and (min-width: 0px) and (max-width: 575px)
+    {
+        .LargeCard
+        {
+            width: 92%;
+        }
+    }
+    @media only screen and (min-width: 576px) and (max-width: 767px)
+    {
+        .LargeCard
+        {
+            width: 92%;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+    {
+        .LargeCard
+        {
+            width: 40rem;
+        }
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px)
+    {
+        .LargeCard
+        {
+            width: 40rem;
+        }
+    }
+    @media only screen and (min-width: 1200px)
+    {
+        .LargeCard
+        {
+            width: 40rem;
+        }
+    }
+
 /*#endregion*/
 
 /*#region CONTENT Cards*/
@@ -848,6 +881,13 @@
     {
         background-color: var(--lightgray);
         transition: all 150ms linear;
+    }
+    @media (pointer:coarse)
+    {
+        .CardNavButton
+        {
+            display: none !important;
+        }
     }
     .CardBox
     {
@@ -951,6 +991,17 @@
     background-color: var(--purple);
     font-size: 1.5rem;
     font-weight: 500;
+}
+@media only screen and (max-width: 480px)
+{
+    .DownloadSection > p
+    {
+        font-size: 0.75rem;
+    }  
+    .DownloadButton
+    {
+        width: 7rem;
+    }
 }
 .DownloadButton
 {
