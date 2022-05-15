@@ -1,0 +1,235 @@
+/*#region General styles and links*/
+:root
+{
+    --result_offset: 5rem;
+}
+/*#endregion*/
+
+/*#region Navbar*/
+    .NavbarLine
+    {
+        border-bottom: 1px solid var(--bordergray);
+    }
+/*#endregion*/
+
+/*#region Tag section*/
+    .TagSection
+    {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .TagButton
+    {
+        cursor: grab !important;
+        background-color: var(--bg);
+        color: var(--black);
+        font-weight: 600;
+        width: auto;
+    }
+    .TagDropdownButton
+    {
+        cursor: pointer !important;
+        width: 6rem;
+    }
+    .TagDropdownButton p::after
+    {
+        position: relative;
+        background-image: url("icons/down_arrow_dark.png");
+        background-size: 1.4rem 1.4rem;
+        background-repeat: no-repeat;
+        margin-top: -2rem;
+        margin-left: 4rem;
+    }
+/*#endregion*/
+
+/*#region Main*/
+    .ResultContainer
+    {
+        display: inline-flex;
+        height: calc(100vh - 6rem - 2px);
+        /*overflow-x: hidden;*/
+    }
+/*#endregion*/
+
+/*#region Result half*/
+    .ResultHalf
+    {
+        border-top: 1px solid var(--bordergray);
+        transition: width 400ms ease-in-out;
+        overflow-y: scroll;
+    }
+    .ResultHalf::-webkit-scrollbar
+    {
+        width: 0;
+        height: 0;
+    }
+    .ResultMaxWidth
+    {
+        max-width: 100%;
+    }
+    .ResultHeader
+    {
+        font-size: 2rem;
+    }
+    .ResultCardBox
+    {
+        width: 100%;
+        cursor: auto;
+    }
+    @media only screen and (min-width: 400px)
+    {
+        .ResultCardBox
+        {
+            width: 50% !important;
+        }
+    }
+    @media only screen and (max-width: 767px)
+    {
+        .ResultHalf
+        {
+            width: 100%;
+            transform: translateX(0) !important;
+            margin-left: 0 !important;
+        }
+    }
+    @media only screen and (min-width: 768px)
+    {
+        .ResultHalf
+        {
+            width: calc(50% + var(--result_offset));
+            transform: translateX(var(--result_offset));
+            margin-left: calc(-1 * var(--result_offset));
+        }
+        .ResultMaxWidth
+        {
+            width: calc(880px + var(--result_offset));
+        }
+    }
+
+/*#endregion*/
+
+/*#region Map half*/
+    .MapHalf
+    {
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+        background-image: url(images/map.png);
+        background-position: center;
+        background-size: cover;
+    }
+    @media only screen and (max-width: 767px)
+    {
+        .MapHalf
+        {
+            width: 0%;
+            transform: translateX(0);
+        }
+        .MapArrowButton[value=shrunk]
+        {
+            margin-left: -3rem !important;
+        }
+        .MapArrowButton[value=expanded]
+        {
+            margin-left: 1rem !important;
+        }
+    }
+    @media only screen and (min-width: 768px)
+    {
+        .MapHalf
+        {
+            transform: translateX(var(--result_offset));
+            width: calc(50% - var(--result_offset));
+        }
+    }
+    .MapArrowButton
+    {
+        margin: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--bg);
+        border: 1px solid var(--lightergray);
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        color: var(--black);
+        transition: all 150ms;
+        z-index: 2;
+    }
+    .MapArrowButton:hover, .MapArrowButton:active
+    {
+        background-color: var(--lightergray);
+    }
+/*#endregion*/
+
+.ButoonMinDevSettings{
+    border: none;
+    padding: 1.11rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--purple);
+    border-radius: 50%;
+}
+
+.PhotoMaxMinWithScaler{
+    max-width: 1rem;
+    margin-top: -1.5rem;
+    margin-left: -0.5rem;
+}
+
+
+
+
+
+
+/*#mobile dev*/
+@media only screen and (max-width: 768px)
+{
+    .ResultsDisplayNone{
+        display: none !important;
+    }
+
+    .MobileResultsBox{
+        border: solid 1px red;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-top: 1.4rem;
+    }
+
+    .LineHightAj{
+        line-height: 0.4rem;
+    }
+
+    .CustomHartImgAresult{
+        background-color: aliceblue;
+        position: absolute;
+        padding: 0.6rem;
+        margin: 0.7rem;
+        border-radius: 50%;
+        width: 3rem;
+        text-align: center;
+    }
+    
+
+}
+
+@media only screen and (max-width: 380px)
+{
+    .MobileResultsBox{
+        border: solid 1px red;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-top: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    .ResultsDisplayNoneMin{
+        display: none !important;
+    }
+}
+
+
+/*#endregion*/

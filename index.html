@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Mysiit</title>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <div class="NavbarLine">
+        <nav class="navbar MaxWidth mx-auto navbar-expand">
+            <div class="navbar w-50 w-md-100 p-0">
+                <ul class="navbar-nav">
+                    <a class="navbar-brand px-0 py-0" href="index.html">
+                        <img class="BrandLogo" src="images/Mysiit_logo.svg" width="100" height="40" alt="Mysiit">
+                    </a>
+                </ul>
+            </div>
+            <div class="mx-auto navbar p-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <input class="PillElement SearchBox px-3" type="text" placeholder="Search..." aria-label="Search">
+                    </li>
+                    <li class="nav-item dropdown mr-auto">
+                        <button onclick="location.href='results.html'" class="PillElement SearchBoxButton p-0 pl-3 m-0" type="button">
+                            <p class="IconText m-0"></p>
+                        </button>
+                    </li>
+                    <li class="ml-2 nav-item dropdown mr-auto">
+                        <button onclick="OpenNavMenu('FilterSection')" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
+                            <p class="IconText m-0">­</p>
+                        </button>
+                    </li>
+                </ul>       
+            </div>
+            <div class="navbar w-50 w-md-100 p-0">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-none d-md-flex">
+                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Login</a>
+                    </li>
+                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
+                    <li class="nav-item d-none d-md-flex">
+                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Sign up</a>
+                    </li>
+                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
+                    <li class="nav-item dropdown d-flex">
+                        <button class="PillElement LangButton p-0 text-center m-0" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="IconText m-0">English</p>
+                        </button>
+                        <div class="LangDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
+                            <div class="text-center">
+                                <div class="Triangle text-center"></div>
+                            </div>
+                            <a class="DropdownButton text-center" href="#">Latvian</a>
+                            <a class="DropdownButton text-center" href="#">Lithuanian</a>
+                            <br>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!--Filters (mobile search)-->
+    <section class="FilterSection NavOverlay" id="FilterSection">
+        <div class="FilterOverlayBox mx-auto mb-5 mt-1">
+            <form id="FilterForm" class="FilterMain mb-0 mb-md-5 mb-5">
+                <div class="MaxWidth px-xl-5 pt-3">
+                    <!--<div class="CloseFilterOverlayBox text-right w-100">
+                        <button onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseFilterOverlay m-3">&times;</button>
+                    </div>-->
+                    <a href="javascript:void(0)" class="CloseFilterButton" onclick="CloseNavMenu('FilterSection')">&times;</a>
+                    <div class="my-4">
+                        <p class="FilterHeader w-100 d-md-none text-left">Search</p>
+                        <section class="SearchSection HiddenSearchSection d-flex d-md-none justify-content-center">
+                            <span class="FloatingSearch container-fluid">
+                                <span class="row h-100 w-auto py-2">
+                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                                        <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
+                                        <input class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto" type="text" placeholder="Location" aria-label="Search">
+                                    </div>
+                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                                        <div class="Incrementor PillElement SearchEl3 text-center mx-auto pr-4 pr-sm-3 pr-md-5 pr-lg-3">
+                                            <button type="button" class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(0)" value="Decrease Value">-</button>
+                                            <input title="NumberInput" class="IncNumber" type="text" readonly value="1" max="8" min="1">
+                                            <button type="button" class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(0)" value="Increase Value">+</button>
+                                        </div>
+                                        <input class="PillElement SearchEl4 text-center pl-5 pr-4 pr-lg-0 pl-lg-4 mt-3 mt-sm-0 mx-auto" type="date" aria-label="Search">
+                                    </div>
+                                </span>
+                            </span>
+                        </section>
+                    </div>
+                    
+                    <div class="my-0">
+                        <p class="FilterHeader mb-4 w-100 text-md-left">Type of place</p>
+                        <ul class="FilterCheckboxContainer FilterUl">
+                            <li><input type="checkbox" class="checkbox" id="checkboxOne" value=""><label for="checkboxOne">Sushi</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">Soup</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxThree" value=""><label for="checkboxThree">Indian</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxFour" value=""><label for="checkboxFour">Salad</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxFive" value=""><label for="checkboxFive">Kebab</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxSix" value=""><label for="checkboxSix">Pizza</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxseven" value=""><label for="checkboxseven">Sweet</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxeight" value=""><label for="checkboxeight">Chinese</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxnine" value=""><label for="checkboxnine">Alcoholic coctail</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxten" value=""><label for="checkboxten">wrap</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxeleven" value=""><label for="checkboxeleven">Vegan</label></li>
+                        </ul>
+                    </div>
+                    <div class="FilterDividerLine"></div>
+                    <div class="mt-4">
+                        <p class="FilterHeader mb-4 w-100 text-md-left">Price of range</p>
+                        <ul class="FilterCheckboxContainer FilterUl">
+                            <li><input type="checkbox" class="checkbox" id="checkboxTW" value=""><label for="checkboxTW">10 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxTH" value=""><label for="checkboxTH">20 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxFR" value=""><label for="checkboxFR">50 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxFI" value=""><label for="checkboxFI">80 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxSI" value=""><label for="checkboxSI">100 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxSE" value=""><label for="checkboxSE">150 €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxET" value=""><label for="checkboxET">more €</label></li>
+                        </ul>
+                    </div>
+                    <div class="FilterDividerLine"></div>
+                    <div class="mt-4">
+                        <p class="FilterHeader mb-4 w-100 text-md-left">Facilities</p>
+                        <ul class="FilterCheckboxContainer FilterUl">
+                            <li><input type="checkbox" class="checkbox" id="checkboxZR" value=""><label for="checkboxZR">TV</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZC" value=""><label for="checkboxZC">Pool</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZQ" value=""><label for="checkboxZQ">Wifi</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZA" value=""><label for="checkboxZA">Free parking</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZD" value=""><label for="checkboxZD">Childrens corner</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZG" value=""><label for="checkboxZG">Pook</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="FilterDividerLine"></div>
+                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between">
+                    <a href="javascript:document.getElementById('FilterForm').reset();" class="ClearFilterButton p-0 m-0">
+                        <p class="IconText m-0">Clear all</p>
+                    </a>
+                    <button class="PillElement ShowFilterButton p-0 m-0" type="submit">
+                        <p class="IconText m-0">Show</p>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--Login popup overlay-->
+    <section class="PopupScrollbar NavOverlay LoginOverlay" id="LoginOverlay">
+        <div class="LoginOverlayContainer">
+            <div class="text-right">
+                <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay m-3">&times;</button>
+            </div>
+            <form action="index.html" class="LoginBox mx-auto my-auto text-center">
+                <h3 class="mb-0">Welcome to Mysiit</h3>
+                <input class="LoginInput px-3 mt-4" type="text" placeholder="Username">
+                <input class="LoginInput px-3 mt-4" type="password" placeholder="Password">
+                <div class="w-100 row SmallLoginText m-0 mt-3">
+                    <div class="GrayLoginText col-5 p-0 text-left">
+                        <label class="CheckboxLabel mb-0">
+                            <input class="CustomCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
+                            Remember Me
+                        </label>
+                    </div>
+                    <div class="GrayLoginText col-7 p-0 m-0 text-right">
+                        <a href="">Forgot password</a>
+                    </div>
+                </div>
+                <button class="PillElement StartButton mt-4">Get started</button>
+                <div class="SmallLoginText mt-1 d-flex flex-wrap justify-content-center">
+                    <p class="ContinueText GrayLoginText text-center w-100 mt-3 mb-0">Or log in with:</p>
+                    <div class="w-100 py-1">
+                        <button class="GoogleButton"><p class="mb-0">Continue with Google</p></button>
+                    </div>
+                    <div class="w-100 py-1">
+                        <button class="FacebookButton"><p class="mb-0">Continue with Facebook</p></button>
+                    </div>
+                </div>
+                <div class="RegisterElement">
+                    <p class="GrayLoginText SmallLoginText">Don't have an account? <a href="">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <section class="HeaderSizingBox">
+        <div class="CustomHeader h-100 container-fluid d-flex flex-wrap align-items-xl-center px-0">
+            <div class="w-100 MaxWidth mx-auto">
+                <div class="HeaderTextBox invisible">
+                    <h1 class="HeaderText VariableH1 DarkGrayText mt-4">
+                        Discover and <br class="d-none d-sm-block"><font class="ColorText">book <br class="d-block d-sm-none">the best</font> <br class="d-none d-sm-block">restaurant
+                    </h1>
+                </div>
+                <div class="w-100 h-auto mt-5 pt-5">
+                    <input class="PillElement BoxShadow SearchBox text-center pl-5 pr-3 my-auto mx-auto d-none" type="text" placeholder="Restaurant name, categories..." aria-label="Search">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Search -->
+    <section class="SearchSection MaxWidth mx-auto d-none d-md-flex justify-content-center">
+        <span class="FloatingSearch BoxShadow my-3 container-fluid">
+            <span class="row h-100 px-4 w-auto py-2">
+                <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                    <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
+                    <input class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto" type="text" placeholder="Location" aria-label="Search">
+                </div>
+                <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                    <div class="Incrementor PillElement SearchEl3 text-center mx-auto pr-4 pr-sm-3 pr-md-5 pr-lg-3">
+                        <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(1)" value="Decrease Value">-</button>
+                        <input title="NumberInput" class="IncNumber" type="text" readonly value="1" max="8" min="1">
+                        <button class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(1)" value="Increase Value">+</button>
+                    </div>
+                    <input class="PillElement SearchEl4 text-center pl-5 pr-4 pr-lg-0 pl-lg-4 mt-3 mt-sm-0 mx-auto pt-1" type="date" aria-label="Search">
+                    <button onclick="window.location.href='results.html';" class="PillElement SearchEl5 p-0 m-0 mt-3 mt-sm-0 mx-auto">
+                        <p class="IconText m-0"><b>Search</b></p>
+                    </button>
+                </div>
+            </span>
+        </span>
+    </section>
+
+    <!-- Card row #1 -->
+    <div class="MaxSwiperWidth mx-auto">
+        <div class="swiper mb-3">
+            <div class="MaxWidth row w-100 my-4 mx-0">
+                <div class="col-12 col-sm-8 order-2 order-sm-1 px-0">
+                    <h1 class="MediumH1 DarkGrayText"><b>Fastest food</b></h1>
+                </div>
+                <div class="DesktopCardNav col-12 col-sm-4 order-1 order-sm-2 px-0 d-flex align-items-center justify-content-start justify-content-sm-end">
+                    <a class="mr-3" href="category.html">Show (879)</a>
+                    <button class="CustomSwiperButtonPrevious CardNavButton">&lt</button>
+                    <button class="CustomSwiperButtonNext ml-2 CardNavButton">&gt</button>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+
+                <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>
+                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Japanese</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Vapiano</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Grev Turegatan 10, 114 46 Stockholm</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kebabino</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Japanese</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Oaka burger</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Grev Turegatan 10, 114 46 Stockholm</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox EndSlide swiper-slide MediumCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Grev Turegatan 10, 114 46 Stockholm</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                </div>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
+                            </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+
+    <!-- Card row #2 -->
+    <div class="MaxSwiperWidth mx-auto">
+        <div class="swiper mb-3">
+            <div class="MaxWidth row w-100 my-4 mx-0">
+                <div class="col-12 col-sm-8 order-2 order-sm-1 px-0">
+                    <h1 class="MediumH1 DarkGrayText"><b>Categories</b></h1>
+                </div>
+                <div class="DesktopCardNav col-12 col-sm-4 order-1 order-sm-2 px-0 d-flex align-items-center justify-content-start justify-content-sm-end">
+                    <a class="mr-3" href="category.html">Show (18)</a>
+                    <button class="CustomSwiperButtonPrevious CardNavButton">&lt</button>
+                    <button class="CustomSwiperButtonNext ml-2 CardNavButton">&gt</button>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+
+                <div class="CardBox StartSlide swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Fish</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Pizza</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Sushi</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Vegan</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Salad</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Pasta</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Salad</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox EndSlide swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/kategorija_6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Pasta</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+
+    <!-- Card row #3 -->
+    <div class="MaxSwiperWidth mx-auto">
+        <div class="swiper mb-3">
+            <div class="MaxWidth row w-100 my-4 mx-0">
+                <div class="col-12 col-sm-8 order-2 order-sm-1 px-0">
+                    <h1 class="MediumH1 DarkGrayText"><b>Mysiit specials</b></h1>
+                </div>
+                <div class="DesktopCardNav col-12 col-sm-4 order-1 order-sm-2 px-0 d-flex align-items-center justify-content-start justify-content-sm-end">
+                    <a class="mr-3" href="category.html">Show (24)</a>
+                    <button class="CustomSwiperButtonPrevious CardNavButton">&lt</button>
+                    <button class="CustomSwiperButtonNext ml-2 CardNavButton">&gt</button>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+
+                <div class="CardBox StartSlide swiper-slide LargeCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage ClickableImageFull" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/specials_1.png" alt="">
+                                <p class="CardOverlayText">Pasta restaurant</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide LargeCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage ClickableImageFull" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/specials_2.png" alt="">
+                                <p class="CardOverlayText">New restaurant in Riga</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox EndSlide swiper-slide LargeCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage ClickableImageFull" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/specials_1.png" alt="">
+                                <p class="CardOverlayText">Pasta restaurant</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+
+    <!-- Card row #4 -->
+    <div class="MaxSwiperWidth mx-auto">
+        <div class="swiper mb-3">
+            <div class="MaxWidth row w-100 my-4 mx-0">
+                <div class="col-12 col-sm-8 order-2 order-sm-1 px-0">
+                    <h1 class="MediumH1 DarkGrayText"><b>Mysiit around the world</b></h1>
+                </div>
+                <div class="DesktopCardNav col-12 col-sm-4 order-1 order-sm-2 px-0 d-flex align-items-center justify-content-start justify-content-sm-end">
+                    <a class="mr-3" href="category.html">Show (18)</a>
+                    <button class="CustomSwiperButtonPrevious CardNavButton">&lt</button>
+                    <button class="CustomSwiperButtonNext ml-2 CardNavButton">&gt</button>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+
+                <div class="CardBox StartSlide swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Riga</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Paris</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Spain</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Norway</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Canada</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Canada</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Canada</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="CardBox EndSlide swiper-slide SmallCard container-fluid p-0 h-auto">
+                    <div class="h-100 mx-1 mx-md-2">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/world_6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mt-4 pt-1 PaddedRow">
+                            <h6 class="col p-0 mb-0"><b>Lithuania</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 mb-3 PaddedRow">
+                            <p class="col p-0 mb-0 SmallCardText GrayText">32 restaurants</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>        
+    </div>
+
+    <!-- Download to phone section -->
+    <section class="DownloadSection mt-5 w-100 py-3 d-flex flex-wrap justify-content-center align-items-center">
+        <p class="mb-0 my-2 mx-3 text-center">Download to phone</p>
+        <button class="PillElement DownloadButton my-2 mx-3 p-0 m-0">
+            <p class="IconText m-0"><b>Download</b></p>
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pb-5 CustomFooter">
+        <div class="container-fluid MaxWidth">
+            <div class="row pt-5 mx-0 FooterRow text-center text-md-left">
+                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="login.html" class="mb-1">Login</a><br>
+                    <a href="login.html">Register</a><br>
+                </div>
+                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-1">Contact</a><br>
+                    <a href="" class="mb-1">About</a><br>
+                    <a href="">Help center</a><br>
+                </div>
+                <div class="col-12 col-md-3 px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-1">Terms of use</a><br>
+                    <a href="">Privacy and cookies statement</a><br>
+                </div>
+                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-1">Facebook</a><br>
+                    <a href="">Instagram</a><br>
+                </div>
+                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-1">Install for phone</a><br>
+                </div>
+            </div>
+            <p class="Copyright mt-3 mb-5 mb-md-0 text-center text-md-left">© 2022 Mysiit - ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+    <!-- Mobile navbar -->
+    <div class="navbar MobileNavbar p-0 w-100 d-md-none">
+        <button class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon" src="icons/homew.png" alt="">
+            <p>Home</p>
+        </button>
+        <button class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon" src="icons/heartw.png" alt="">
+            <p>Wishlists</p>
+        </button>
+        <button class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('FilterSection')">
+            <img class="MobileNavIcon" src="icons/loupew.png" alt="">
+            <p>Search</p>
+        </button>
+        <button onclick="window.location.href='login.html'" class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon" src="icons/account_white.png" alt="">
+            <p>Login</p>
+        </button>
+        <button  class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('NavMenu')">
+            <img class="MobileNavIcon" src="icons/menuw.png" alt="">
+            <p>Menu</p>
+        </button>
+    </div>
+
+    <!-- Opened mobile nav menu -->
+    <div id="NavMenu" class="NavOverlay">
+        <a href="javascript:void(0)" class="CloseOverlayButton" onclick="CloseNavMenu('NavMenu')">&times;</a>
+        <div class="OverlayContent w-100">
+            <a href="#" class="TextColorWMobileNav">Home</a>
+            <a href="#" class="TextColorWMobileNav">Wishlist</a>
+            <a href="#" class="TextColorWMobileNav">Search</a>
+            <a href="#" class="TextColorWMobileNav">Profile</a>
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
