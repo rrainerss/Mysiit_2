@@ -5,13 +5,6 @@
 }
 /*#endregion*/
 
-/*#region Navbar*/
-    .NavbarLine
-    {
-        border-bottom: 1px solid var(--bordergray);
-    }
-/*#endregion*/
-
 /*#region Tag section*/
     .TagSection
     {
@@ -26,28 +19,39 @@
         font-weight: 600;
         width: auto;
     }
-    .TagDropdownButton
+    .TagFilterButton
     {
-        cursor: pointer !important;
-        width: 6rem;
+        width: 2.6rem;
+        background-color: var(--purple);
+        border: 1px solid var(--purple);
     }
-    .TagDropdownButton p::after
+    .TagFilterButton > p::before
     {
-        position: relative;
-        background-image: url("icons/down_arrow_dark.png");
-        background-size: 1.4rem 1.4rem;
+        background-image: url("icons/filter.png");
+        background-size: 1rem 1rem;
+        margin-left: -0.25rem;
+        margin-top: 0.75rem;
         background-repeat: no-repeat;
-        margin-top: -2rem;
-        margin-left: 4rem;
+    }
+    .TagFilterButton > p::after
+    {
+        display: none;
+    }
+    .TagFilterButton:hover
+    {
+        background-color: var(--black);
+        border: 1px solid var(--black);
     }
 /*#endregion*/
 
 /*#region Main*/
-    .ResultContainer
+    @media only screen and (min-width: 768px)
     {
-        display: inline-flex;
-        height: calc(100vh - 6rem - 2px);
-        /*overflow-x: hidden;*/
+        .ResultContainer
+        {
+            display: inline-flex;
+            height: calc(100vh - 5rem - 2px);
+        }        
     }
 /*#endregion*/
 
@@ -108,6 +112,42 @@
 
 /*#endregion*/
 
+/*#region Card sizes/adjustments*/
+    .MediumCard
+    {
+        cursor: auto;
+    }
+    @media only screen and (min-width: 0px) and (max-width: 575px)
+    {
+        .MediumCard
+        {
+            width: 25rem;
+        }
+    }
+    @media only screen and (min-width: 576px) and (max-width: 767px)
+    {
+        .MediumCard
+        {
+            width: 80%;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px)
+    {
+        .MediumCard
+        {
+            width: 45%;
+        }
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px)
+    {
+
+    }
+    @media only screen and (min-width: 1200px)
+    {
+
+    }
+/*#endregion*/
+
 /*#region Map half*/
     .MapHalf
     {
@@ -161,75 +201,4 @@
     {
         background-color: var(--lightergray);
     }
-/*#endregion*/
-
-.ButoonMinDevSettings{
-    border: none;
-    padding: 1.11rem;
-    width: 1.2rem;
-    height: 1.2rem;
-    background-color: var(--purple);
-    border-radius: 50%;
-}
-
-.PhotoMaxMinWithScaler{
-    max-width: 1rem;
-    margin-top: -1.5rem;
-    margin-left: -0.5rem;
-}
-
-
-
-
-
-
-/*#mobile dev*/
-@media only screen and (max-width: 768px)
-{
-    .ResultsDisplayNone{
-        display: none !important;
-    }
-
-    .MobileResultsBox{
-        border: solid 1px red;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        padding-top: 1.4rem;
-    }
-
-    .LineHightAj{
-        line-height: 0.4rem;
-    }
-
-    .CustomHartImgAresult{
-        background-color: aliceblue;
-        position: absolute;
-        padding: 0.6rem;
-        margin: 0.7rem;
-        border-radius: 50%;
-        width: 3rem;
-        text-align: center;
-    }
-    
-
-}
-
-@media only screen and (max-width: 380px)
-{
-    .MobileResultsBox{
-        border: solid 1px red;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        padding-top: 1.4rem;
-    }
-}
-
-@media only screen and (min-width: 768px)
-{
-    .ResultsDisplayNoneMin{
-        display: none !important;
-    }
-}
-
-
 /*#endregion*/

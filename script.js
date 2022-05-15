@@ -285,10 +285,13 @@
 
 //Category selector in restaurant view
 //FoodMenuDiv, OffersDiv
-    window.onload = (event) =>
+    if(document.querySelectorAll("div[value=DynamicDiv]")[1])
     {
-        document.querySelectorAll("div[value=DynamicDiv]")[1].style.display = 'none';
-    };
+        window.onload = (event) =>
+        {
+            document.querySelectorAll("div[value=DynamicDiv]")[1].style.display = 'none';
+        };        
+    }
 
     function ShowRestaurantMenu(DivClass, ButtonClass)
     {
@@ -307,55 +310,20 @@
     }
 ///////////
 
-
-//skrulejot uz augshu parada
-/*
-var startProductBarPos=-1;
-window.onscroll=function(){
-  var bar = document.getElementById('nav');
-  if(startProductBarPos<0)startProductBarPos=findPosY(bar);
-
-  if(pageYOffset>startProductBarPos){
-    bar.style.position='fixed';
-    bar.style.top=0;
-  }else{
-    bar.style.position='relative !important';
-  }
-
-};
-
-function findPosY(obj) {
-  var curtop = 0;
-  if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
-    while (obj.offsetParent) {
-      curtop += obj.offsetTop;
-      obj = obj.offsetParent;
-    }
-    curtop += obj.offsetTop;
-  }
-  else if (obj.y)
-    curtop += obj.y;
-  return curtop;
-}
-
-//////////
-
-
-
-// dala 2
-
-let oldValue = 0
-let newValue = 0
-window.addEventListener('scroll', (e) => {
-  newValue = window.pageYOffset;
-  if (oldValue < newValue) {
-   
-    document.getElementById("nav").style.display = "none";
-  } else if (oldValue > newValue) {
-    
-    document.getElementById("nav").style.display = "block";
-  }
-  oldValue = newValue;
-});
+//Hide mobile navbar when scrolling
+    var lastScrollTop;
+    navbar = document.getElementsByClassName('TopNavbar')[0];
+    window.addEventListener('scroll',function()
+    {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if(scrollTop > lastScrollTop)
+        {
+            navbar.style.top='-5rem';
+        }
+        else
+        {
+            navbar.style.top='0';
+        }
+        lastScrollTop = scrollTop;
+    });
 ///////////
-*/

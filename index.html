@@ -8,7 +8,6 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="index.css">
     <title>Mysiit</title>
@@ -16,7 +15,7 @@
 <body>
     
     <!-- Navbar -->
-    <div class="NavbarLine">
+    <div class="NavbarLine TopNavbar">
         <nav class="navbar MaxWidth mx-auto navbar-expand">
             <div class="navbar w-50 w-md-100 p-0">
                 <ul class="navbar-nav">
@@ -72,7 +71,7 @@
 
     <!--Filters (mobile search)-->
     <section class="FilterSection NavOverlay" id="FilterSection">
-        <div class="FilterOverlayBox mx-auto mb-5 pb-5 pb-md-0">
+        <div class="FilterOverlayBox mb-5 pb-5 pb-md-0">
             <form id="FilterForm" class="FilterMain mb-2 mb-md-5">
                 <div class="MaxWidth px-xl-5 pt-3">
                     <div class="my-4">
@@ -143,7 +142,7 @@
                     </div>
                 </div>
                 <div class="FilterDividerLine"></div>
-                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between">
+                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between FilterFooter">
                     <a href="javascript:document.getElementById('FilterForm').reset();" class="ClearFilterButton p-0 m-0">
                         <p class="IconText m-0">Clear all</p>
                     </a>
@@ -157,8 +156,8 @@
 
     <!--Login popup overlay-->
     <section class="PopupScrollbar NavOverlay LoginOverlay" id="LoginOverlay">
-        <div class="LoginOverlayContainer">
-            <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay m-3">&times;</button>
+        <div class="LoginOverlayContainer d-flex">
+            <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay CloseLoginOverlay m-4">&times;</button>
             <form action="index.html" class="LoginBox mx-auto my-auto text-center">
                 <h3 class="mb-0">Welcome to Mysiit</h3>
                 <input class="LoginInput px-3 mt-4" type="text" placeholder="Username">
@@ -904,18 +903,18 @@
     </div>
 
     <!-- Opened mobile nav menu -->
-    <div id="NavMenu" class="NavOverlay">
+    <div id="NavMenu" class="NavOverlay NavOverlayOpaque">
         <div class="w-100 text-right">
             <button onclick="CloseNavMenu('NavMenu')" class="CloseOverlay m-4">&times;</button>
         </div>
         <div class="OverlayContent mx-4">
-            <a href="#" class="m-0">Search</a>
+            <a href="#" class="m-0" onclick="OpenNavMenu('FilterSection', 'MobileSearchButton')">Search</a>
             <hr class="my-2">
-            <a href="#" class="m-0">Profile</a>
+            <a href="profile.html" class="m-0">Profile</a>
             <hr class="my-2">
             <a href="#" class="m-0">Wishlist</a>
             <hr class="my-2">
-            <a href="login.html">Login</a>
+            <a href="#" class="m-0" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')">Login</a>
             <hr class="my-2">
             <a href="#" class="m-0">Languages</a>
             <hr class="my-2">

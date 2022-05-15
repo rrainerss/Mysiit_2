@@ -15,91 +15,35 @@
 </head>
 <body>
 
-       <!-- Navbar -->
-       <div class="NavbarLine HiddenFNavOne">
-        <nav class="navbar MaxWidth mx-auto navbar-expand">
-            <div class="navbar w-50 w-md-100 p-0">
-                <ul class="navbar-nav mr-auto">
-                    <a class="navbar-brand px-0 py-0" href="index.html">
-                        <img src="images/Mysiit_logo.svg" width="100" height="40" alt="Mysiit">
-                    </a>
-                </ul>
-            </div>
-            <div class="mx-auto navbar p-0">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <input class="PillElement SearchBox pl-5 pr-3" type="text" placeholder="Search..." aria-label="Search">
-                    </li>
-                    <li class="nav-item dropdown d-none d-md-flex mr-auto">
-                        <button onclick="OpenNavMenu('FilterSection')" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
-                            <p class="IconText m-0">Filters</p>
-                        </button>
-                    </li>
-                </ul>       
-            </div>
-
-            <div class="navbar w-50 w-md-100 p-0">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item d-none d-md-flex">
-                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Login</a>
-                    </li>
-                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
-                    <li class="nav-item d-none d-md-flex">
-                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Sign up</a>
-                    </li>
-                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
-                    <li class="nav-item dropdown d-flex">
-                        <button class="PillElement LangButton ShrinkNavButton p-0 text-center m-0" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <p class="IconText m-0">English</p>
-                        </button>
-                        <div class="LangDropdown ShrinkDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
-                            <div class="text-center">
-                                <div class="Triangle text-center"></div>
-                            </div>
-                            <a class="DropdownButton text-center" href="#">Latvian</a>
-                            <a class="DropdownButton text-center" href="#">Lithuanian</a>
-                            <br>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
     <!-- Navbar -->
-    <div class="NavbarLine HiddenFNav" id="nav">
+    <div class="NavbarLine TopNavbar">
         <nav class="navbar MaxWidth mx-auto navbar-expand">
             <div class="navbar w-50 w-md-100 p-0">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     <a class="navbar-brand px-0 py-0" href="index.html">
-                        <img src="images/Mysiit_logo.svg" class="ImgNavMinDev" alt="Mysiit">
+                        <img class="BrandLogo" src="images/Mysiit_logo.svg" width="100" height="40" alt="Mysiit">
                     </a>
                 </ul>
             </div>
             <div class="mx-auto navbar p-0">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <input class="PillElement SearchBox pl-5 pr-3" type="text" placeholder="Search..." aria-label="Search">
+                        <input class="PillElement SearchBox px-3" type="text" placeholder="Search..." aria-label="Search">
                     </li>
-                    <li class="nav-item dropdown d-none d-md-flex mr-auto">
-                        <button onclick="OpenNavMenu('FilterSection')" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
-                            <p class="IconText m-0">Filters</p>
+                    <li class="nav-item dropdown mr-auto">
+                        <button onclick="location.href='results.html'" class="PillElement SearchBoxButton p-0 pl-3 m-0" type="button">
+                            <p class="IconText m-0"></p>
+                        </button>
+                    </li>
+                    <li class="ml-2 nav-item dropdown mr-auto">
+                        <button value="MobileSearchButton" onclick="OpenNavMenu('FilterSection', this.value)" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
+                            <p class="IconText m-0">­</p>
                         </button>
                     </li>
                 </ul>       
             </div>
-
-            <div class="mx-auto navbar p-0">
-                <ul class="navbar-nav mr-auto">
-                    <button onclick="OpenNavMenu('FilterSection')" class="ButoonMinDevSettings mx-4" type="button">
-                        <img src="icons/filter.png" class="PhotoMaxMinWithScaler">
-                    </button>
-                </ul>       
-            </div>
-
             <div class="navbar w-50 w-md-100 p-0">
                 <ul class="navbar-nav ml-auto">
-                    
                     <li class="nav-item d-none d-md-flex">
                         <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Login</a>
                     </li>
@@ -107,13 +51,12 @@
                     <li class="nav-item d-none d-md-flex">
                         <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Sign up</a>
                     </li>
-
                     <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
                     <li class="nav-item dropdown d-flex">
-                        <button class="PillElement LangButton ShrinkNavButton p-0 text-center m-0" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="PillElement LangButton p-0 text-center m-0" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <p class="IconText m-0">English</p>
                         </button>
-                        <div class="LangDropdown ShrinkDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
+                        <div class="LangDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
                             <div class="text-center">
                                 <div class="Triangle text-center"></div>
                             </div>
@@ -126,21 +69,19 @@
             </div>
         </nav>
     </div>
-    
 
     <!--Filters (mobile search)-->
     <section class="FilterSection NavOverlay" id="FilterSection">
-        <div class="FilterOverlayBox mx-auto mb-5 mt-1">
-            <form id="FilterForm" class="FilterMain mb-0 mb-md-5 mb-5">
+        <div class="FilterOverlayBox mb-5 pb-5 pb-md-0">
+            <form id="FilterForm" class="FilterMain mb-2 mb-md-5">
                 <div class="MaxWidth px-xl-5 pt-3">
-                    <!--<div class="CloseFilterOverlayBox text-right w-100">
-                        <button onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseFilterOverlay m-3">&times;</button>
-                    </div>-->
-                    <a href="javascript:void(0)" class="CloseFilterButton" onclick="CloseNavMenu('FilterSection')">&times;</a>
-                    <div class="my-4 HiddenOnMobile">
-                        <p class="FilterHeader w-100 text-center d-md-none text-md-left">Search</p>
+                    <div class="my-4">
+                        <div class="w-100 text-right">
+                            <button type="button" onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseMobileSearch">&times;</button>
+                        </div>
+                        <p class="FilterHeader w-100 d-md-none text-left">Search</p>
                         <section class="SearchSection HiddenSearchSection d-flex d-md-none justify-content-center">
-                            <span class="FloatingSearch px-4 container-fluid">
+                            <span class="FloatingSearch container-fluid">
                                 <span class="row h-100 w-auto py-2">
                                     <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
                                         <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
@@ -169,9 +110,9 @@
                             <li><input type="checkbox" class="checkbox" id="checkboxFive" value=""><label for="checkboxFive">Kebab</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxSix" value=""><label for="checkboxSix">Pizza</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxseven" value=""><label for="checkboxseven">Sweet</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxeight" value=""><label for="checkboxeight">Chinese</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxnine" value=""><label for="checkboxnine">Alcoholic coctail</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxten" value=""><label for="checkboxten">wrap</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxeight" value=""><label for="checkboxeight">Chinese</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxnine" value=""><label for="checkboxnine">Alcoholic coctail</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxten" value=""><label for="checkboxten">wrap</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxeleven" value=""><label for="checkboxeleven">Vegan</label></li>
                         </ul>
                     </div>
@@ -185,7 +126,7 @@
                             <li><input type="checkbox" class="checkbox" id="checkboxFI" value=""><label for="checkboxFI">80 €</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxSI" value=""><label for="checkboxSI">100 €</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxSE" value=""><label for="checkboxSE">150 €</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxET" value=""><label for="checkboxET">more €</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxET" value=""><label for="checkboxET">more €</label></li>
                         </ul>
                     </div>
                     <div class="FilterDividerLine"></div>
@@ -196,13 +137,13 @@
                             <li><input type="checkbox" class="checkbox" id="checkboxZC" value=""><label for="checkboxZC">Pool</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxZQ" value=""><label for="checkboxZQ">Wifi</label></li>
                             <li><input type="checkbox" class="checkbox" id="checkboxZA" value=""><label for="checkboxZA">Free parking</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxZD" value=""><label for="checkboxZD">Childrens corner</label></li>
-                            <li class="HiddenOnMobile"><input type="checkbox" class="checkbox" id="checkboxZG" value=""><label for="checkboxZG">Pook</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZD" value=""><label for="checkboxZD">Childrens corner</label></li>
+                            <li><input type="checkbox" class="checkbox" id="checkboxZG" value=""><label for="checkboxZG">Pook</label></li>
                         </ul>
                     </div>
                 </div>
                 <div class="FilterDividerLine"></div>
-                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between">
+                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between FilterFooter">
                     <a href="javascript:document.getElementById('FilterForm').reset();" class="ClearFilterButton p-0 m-0">
                         <p class="IconText m-0">Clear all</p>
                     </a>
@@ -216,10 +157,8 @@
 
     <!--Login popup overlay-->
     <section class="PopupScrollbar NavOverlay LoginOverlay" id="LoginOverlay">
-        <div class="LoginOverlayContainer">
-            <div class="text-right">
-                <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay m-3">&times;</button>
-            </div>
+        <div class="LoginOverlayContainer d-flex">
+            <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay CloseLoginOverlay m-4">&times;</button>
             <form action="index.html" class="LoginBox mx-auto my-auto text-center">
                 <h3 class="mb-0">Welcome to Mysiit</h3>
                 <input class="LoginInput px-3 mt-4" type="text" placeholder="Username">
@@ -252,546 +191,234 @@
         </div>
     </section>
 
+    <!--Spacer-->
+    <div class="MobileNavbarTopSpacer"></div>
 
-    <!--Filters (mobile search)-->
-    <section class="FilterSection NavOverlay" id="FilterSection">
-        <div class="FilterOverlayBox mx-auto">
-            <form action="results.html" id="FilterForm" class="FilterMain mb-0 mb-md-5">
-                <div class="MaxWidth px-xl-5 py-3">
-                    <a href="javascript:void(0)" class="CloseFilterButton" onclick="CloseNavMenu('FilterSection')">&times;</a>
-
-                    <div class="my-4">
-                        <p class="FilterHeader w-100 text-center d-md-none text-md-left">Search</p>
-                        <section class="SearchSection HiddenSearchSection d-flex d-md-none justify-content-center">
-                            <span class="FloatingSearch px-4 container-fluid">
-                                <span class="row h-100 w-auto py-2">
-                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
-                                        <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
-                                        <input class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto" type="text" placeholder="Location" aria-label="Search">
-                                    </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
-                                        <div class="Incrementor PillElement SearchEl3 text-center mx-auto pr-4 pr-sm-3 pr-md-5 pr-lg-3">
-                                            <button type="button" class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(0)" value="Decrease Value">-</button>
-                                            <input title="NumberInput" class="IncNumber" type="text" readonly value="1" max="8" min="1">
-                                            <button type="button" class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(0)" value="Increase Value">+</button>
-                                        </div>
-                                        <input class="PillElement SearchEl4 text-center pl-5 pr-4 pr-lg-0 pl-lg-4 mt-3 mt-sm-0 mx-auto" type="date" aria-label="Search">
-                                    </div>
-                                </span>
-                            </span>
-                        </section>
-                    </div>
-
-                    <div class="FilterDividerLine d-flex d-md-none"></div>
-
-                    <div class="my-4">
-                        <p class="FilterHeader mb-4 w-100 text-center text-md-left">Type of place</p>
-                        <div class="FilterSmallText FilterCheckboxContainer">
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class=" mb-0 ml-1">Sushi</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Asian</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Pizza</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Alcoholic coctails</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Indian food</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Vegan</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Latvian food</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Burgers</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Fast food</p>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="FilterDividerLine"></div>
-
-                    <div class="my-4">
-                        <p class="FilterHeader mb-4 w-100 text-center text-md-left">Price of range</p>
-                        <div class="row m-0 p-0">
-                            <div class="order-2 order-md-1 col-3 col-md-2 mr-auto mr-md-0 row p-0 m-0">
-                                <div class="col-6 p-0 m-0 SmallCardText text-center">
-                                    <p class="sml mb-0">min price</p>
-                                    <p class="sml">€ 10</p>  
-                                </div>
-                                <div class="col-6 p-0 m-0">
-                                    <button type="button" id="InputRangeButtonDown" class="CardNavButton InputRangeButton mx-auto">-</button>
-                                </div>
-                            </div>
-                            <div class="order-1 order-md-2 col-12 col-md-8 RangeWrapper p-0 m-0 mb-5 mb-md-0 pt-1">
-                                <input type="range" id="ValueRange" class="ValueRange" value="150" min="10" max="1000" step="1">
-                                <output class="RangeOutput"></output>
-                            </div>
-                            <div class="order-3 order-md-3 col-3 col-md-2 ml-auto ml-md-0 row p-0 m-0">
-                                <div class="col-6 p-0 m-0">
-                                    <button type="button" id="InputRangeButtonUp" class="CardNavButton InputRangeButton mx-auto">+</button>
-                                </div>
-                                <div class="col-6 p-0 m-0 SmallCardText text-center">
-                                    <p class="sml mb-0">max price</p>
-                                    <p class="sml">€1000+</p>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="FilterDividerLine"></div>
-
-                    <div class="my-4">
-                        <p class="FilterHeader mb-4 w-100 text-center text-md-left">Facilities</p>
-                        <div class="FilterSmallText FilterCheckboxContainer">
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class=" mb-0 ml-1">Tv</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Free parking</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Childrens corner</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Pool</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Wifi</p>
-                            </label>
-                            <label class="CheckboxLabel FilterCheckboxLabel my-2 pr-5">
-                                <input class="CustomCheckbox FilterCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
-                                <p class="mb-0 ml-1">Pool</p>
-                            </label>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="FilterDividerLine"></div>
-                <div class="MaxWidth px-xl-5 py-3 d-flex justify-content-between">
-                    <a href="javascript:document.getElementById('FilterForm').reset();" class="ClearFilterButton p-0 m-0">
-                        <p class="IconText m-0">Clear all</p>
-                    </a>
-                    <button class="PillElement ShowFilterButton p-0 m-0" type="submit">
-                        <p class="IconText m-0">Show</p>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!--Tag section section-->
-
-
-    <section class="swiper-tags TagSection MaxWidth mx-auto py-2 py-md-3">
+    <!--Tag section-->
+    <section class="swiper-tags TagSection MaxWidth mx-auto py-2 py-md-4">
         <div class="swiper-wrapper">
-
-
-
-
-
-                        <button onclick="OpenNavMenu('FilterSection')" class="ButoonMinDevSettings mx-4" type="button">
-                            <img src="icons/filter.png" class="PhotoMaxMinWithScaler">
-                        </button>
-
-       
-
-
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Burger</p>
+            <button value="MobileSearchButton" onclick="OpenNavMenu('FilterSection', this.value)" class="swiper-slide PillElement TagFilterButton p-0 pl-3 m-0 mr-3" type="button">
+                <p class="IconText m-0">­</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Chiken</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Burger</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Kebab</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Chicken</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Kids</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Kebab</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Pasta</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Kids</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Wraps</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Pasta</p>
             </button>
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Waffles</p>
-            </button>       
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Salad</p>
-            </button>      
-            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-2" type="button">
-                <p class="IconText LineHightAndAlinemindev mx-4">Amercian</p>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Wraps</p>
             </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Waffles</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Salad</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">American</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Pasta</p>
+            </button>
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Wraps</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Waffles</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">Salad</p>
+            </button>   
+            <button class="swiper-slide PillElement TagButton p-0 m-0 mr-3" type="button">
+                <p class="IconText mx-4">American</p>
+            </button>           
         </div>
-
     </section>
 
-<div class="ResultsDisplayNone"> 
-    <!--Result/map section-->
+
     <section class="ResultContainer w-100">
         <div class="ResultHalf">
-            <div class="MaxSwiperWidth SwiperPadded ResultMaxWidth row mx-2 mx-sm-0 ml-xl-auto mr-xl-3 my-4">
-                <p class="ResultHeader mt-5 col-12 px-2 px-sm-1 px-md-2 mx-4"><b>There are</b></p>
-                <p class="mb-5 col-12 px-2 px-sm-1 px-md-2 mx-4">23 restaurants around you</p>
+            <div class="row m-0 MaxWidth">
+                <p class="ResultHeader mt-3 mt-md-5 mb-0 col-12"><b>There are</b></p>
+                <p class="mb-3 mb-md-5 col-12">23 restaurants around you</p>
 
-                
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
+                <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4">
+                    <div class="h-100">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>
+                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
                                 </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
                             </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
                         </div>
                     </div>
-            
+                </div>
 
-             
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
+                <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4">
+                    <div class="h-100">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>
+                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
                                 </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
                             </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
                         </div>
                     </div>
-             
+                </div>
 
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
+                <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4">
+                    <div class="h-100">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>
+                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
                                 </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
                             </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
                         </div>
                     </div>
-                
+                </div>
 
-               
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
+                <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4">
+                    <div class="h-100">
+                        <div class="row w-100 m-0">
+                            <a class="ClickableImage" href="restaurant.html">
+                                <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
+                            <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                        </div>
+                        <div class="row w-100 m-0 mx-2 PaddedRow">
+                            <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                        </div>
+                        <div class="row mx-2 mt-2 CardXDivider"></div>
+                        <div class="row mx-2 SmallerCardText">
+                            <div class="d-flex align-items-center">
+                                <p class="my-3 ColorText2 mr-1">Open</p>
+                                <div class="CardYDivider mx-2"></div>
+                                <button class="HeartButton" value="0">
+                                    <img class="" src="icons/heart.png" width="16" height="16">
+                                </button>
+                                <div class="CardYDivider mx-2"></div>
+                                <div class="my-3 mx-1 d-inline-flex align-items-center">
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
+                                    <p class="mb-0 LightGrayText">€</p>
                                 </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                <div class="CardYDivider mx-2"></div>
+                                <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                <p class="my-3 mr-1 mb-0">8,2</p>
+                                <div class="CardYDivider mx-2"></div>                                
                             </div>
+                            <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
                         </div>
                     </div>
-               
-
-                
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
-                                </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                            </div>
-                        </div>
-                    </div>
-               
-
-              
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
-                                </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                            </div>
-                        </div>
-                    </div>
-              
-
-            
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
-                                </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                            </div>
-                        </div>
-                    </div>
-               
-
-          
-                    <div class="CardBox StartSlide swiper-slide MediumCard container-fluid p-0 h-auto mb-5">
-                        <div class="h-100 mx-1 mx-md-2">
-                            <div class="row w-100 m-0">
-                                <a class="ClickableImage" href="restaurant.html">
-                                    <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                                <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                            </div>
-                            <div class="row w-100 m-0 mx-2 PaddedRow">
-                                <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                            </div>
-                            <div class="row mx-2 mt-2 CardXDivider"></div>
-                            <div class="row mx-2 SmallerCardText">
-                                <div class="d-flex align-items-center">
-                                    <p class="my-3 ColorText2 mr-1">Open</p>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                                    <div class="CardYDivider mx-2"></div>
-                                    <div class="my-3 mx-1 d-inline-flex align-items-center">
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                        <p class="mb-0 LightGrayText">€</p>
-                                    </div>
-                                    <div class="CardYDivider mx-2"></div>
-                                    <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                                    <p class="my-3 mr-1 mb-0">8,2</p>
-                                    <div class="CardYDivider mx-2"></div>                                
-                                </div>
-                                <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                            </div>
-                        </div>
-                    </div>
-              
+                </div>
 
             </div>
         </div>
@@ -799,315 +426,76 @@
             <button onclick="ExpandResultMap()" value="shrunk" class="MapArrowButton">&lt</button>
         </div>
     </section>
-</div>
 
-
-
-<!-- mobile section-->
-
-<div class="MobileResultsBox ResultsDisplayNoneMin">
-    <div class="HederTitleResults">
-        <p class="LineHightAj"><b>There are</b></p>
-        <p class="LineHightAj">23 restaurants around you</p>
-
-
-
-
-        <div class="CardBox MediumCard container-fluid p-0 h-auto my-5">
-            <div class="h-100 mx-0 md-2">
-                <div class="row w-100 m-0">
-                    <a class="ClickableImage" href="restaurant.html">
-                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-
-
-                        <div class="CustomHartImgAresult">
-                            <img class="ImgAlign" src="icons/heart.png" width="20" height="20" alt="Mysiit" class="mx-3 mb-2">
-                        </div>
-                    </a>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                </div>
-                <div class="row mx-2 mt-2 CardXDivider"></div>
-                <div class="row mx-2 SmallerCardText">
-                    <div class="d-flex align-items-center">
-                        <p class="my-3 ColorText2 mr-1">Open</p>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                        <div class="CardYDivider mx-2"></div>
-                        <div class="my-3 mx-1 d-inline-flex align-items-center">
-                            <p class="mb-0">€</p>
-                            <p class="mb-0">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                        </div>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                        <p class="my-3 mr-1 mb-0">8,2</p>
-                        <div class="CardYDivider mx-2"></div>                                
-                    </div>
-                    <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="CardBox MediumCard container-fluid p-0 h-auto my-5">
-            <div class="h-100 mx-0 md-2">
-                <div class="row w-100 m-0">
-                    <a class="ClickableImage" href="restaurant.html">
-                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-
-                        <div class="CustomHartImgAresult">
-                            <img class="ImgAlign" src="icons/heart.png" width="20" height="20" alt="Mysiit" class="mx-3 mb-2">
-                        </div>
-                    </a>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                </div>
-                <div class="row mx-2 mt-2 CardXDivider"></div>
-                <div class="row mx-2 SmallerCardText">
-                    <div class="d-flex align-items-center">
-                        <p class="my-3 ColorText2 mr-1">Open</p>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                        <div class="CardYDivider mx-2"></div>
-                        <div class="my-3 mx-1 d-inline-flex align-items-center">
-                            <p class="mb-0">€</p>
-                            <p class="mb-0">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                        </div>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                        <p class="my-3 mr-1 mb-0">8,2</p>
-                        <div class="CardYDivider mx-2"></div>                                
-                    </div>
-                    <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="CardBox MediumCard container-fluid p-0 h-auto my-5">
-            <div class="h-100 mx-0 md-2">
-                <div class="row w-100 m-0">
-                    <a class="ClickableImage" href="restaurant.html">
-                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-
-                        <div class="CustomHartImgAresult">
-                            <img class="ImgAlign" src="icons/heart.png" width="20" height="20" alt="Mysiit" class="mx-3 mb-2">
-                        </div>
-                    </a>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                </div>
-                <div class="row mx-2 mt-2 CardXDivider"></div>
-                <div class="row mx-2 SmallerCardText">
-                    <div class="d-flex align-items-center">
-                        <p class="my-3 ColorText2 mr-1">Open</p>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                        <div class="CardYDivider mx-2"></div>
-                        <div class="my-3 mx-1 d-inline-flex align-items-center">
-                            <p class="mb-0">€</p>
-                            <p class="mb-0">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                        </div>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                        <p class="my-3 mr-1 mb-0">8,2</p>
-                        <div class="CardYDivider mx-2"></div>                                
-                    </div>
-                    <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="CardBox MediumCard container-fluid p-0 h-auto my-5">
-            <div class="h-100 mx-0 md-2">
-                <div class="row w-100 m-0">
-                    <a class="ClickableImage" href="restaurant.html">
-                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-
-
-                        <div class="CustomHartImgAresult">
-                            <img class="ImgAlign" src="icons/heart.png" width="20" height="20" alt="Mysiit" class="mx-3 mb-2">
-                        </div>
-                    </a>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                </div>
-                <div class="row mx-2 mt-2 CardXDivider"></div>
-                <div class="row mx-2 SmallerCardText">
-                    <div class="d-flex align-items-center">
-                        <p class="my-3 ColorText2 mr-1">Open</p>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                        <div class="CardYDivider mx-2"></div>
-                        <div class="my-3 mx-1 d-inline-flex align-items-center">
-                            <p class="mb-0">€</p>
-                            <p class="mb-0">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                        </div>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                        <p class="my-3 mr-1 mb-0">8,2</p>
-                        <div class="CardYDivider mx-2"></div>                                
-                    </div>
-                    <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="CardBox MediumCard container-fluid p-0 h-auto my-5">
-            <div class="h-100 mx-0 md-2">
-                <div class="row w-100 m-0">
-                    <a class="ClickableImage" href="restaurant.html">
-                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
-
-                        <div class="CustomHartImgAresult">
-                            <img class="ImgAlign" src="icons/heart.png" width="20" height="20" alt="Mysiit" class="mx-3 mb-2">
-                        </div>
-                    </a>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow d-flex justify-content-between">
-                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
-                </div>
-                <div class="row w-100 m-0 mx-2 PaddedRow">
-                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
-                </div>
-                <div class="row mx-2 mt-2 CardXDivider"></div>
-                <div class="row mx-2 SmallerCardText">
-                    <div class="d-flex align-items-center">
-                        <p class="my-3 ColorText2 mr-1">Open</p>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/heart.png" width="12" height="12">
-                        <div class="CardYDivider mx-2"></div>
-                        <div class="my-3 mx-1 d-inline-flex align-items-center">
-                            <p class="mb-0">€</p>
-                            <p class="mb-0">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                            <p class="mb-0 LightGrayText">€</p>
-                        </div>
-                        <div class="CardYDivider mx-2"></div>
-                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
-                        <p class="my-3 mr-1 mb-0">8,2</p>
-                        <div class="CardYDivider mx-2"></div>                                
-                    </div>
-                    <button class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
-
-</div>
-
-    <!--Footer-->
+    <!-- Footer -->
     <footer class="footer pb-5 CustomFooter">
-        <div class="container px-xl-4">
-            <div class="row pt-5 FooterRow text-center text-md-left">
-                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="login.html" class="mb-1">Login</a><br>
-                    <a href="login.html">Register</a><br>
+        <div class="container-fluid MaxWidth">
+            <div class="row pt-5 mx-0 FooterRow">
+                <div class="order-1 col-4 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="#" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')" class="mb-2">Login</a><br>
+                    <a href="#" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')">Register</a><br>
                 </div>
-                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="" class="mb-1">Contact</a><br>
-                    <a href="" class="mb-1">About</a><br>
+                <div class="order-2 col-4 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-2">Contact</a><br>
+                    <a href="" class="mb-2">About</a><br>
                     <a href="">Help center</a><br>
                 </div>
-                <div class="col-12 col-md-3 px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="" class="mb-1">Terms of use</a><br>
+                <div class="order-4 order-md-3 col-12 col-md-3 px-0 mr-0 mr-lg-5 mb-md-4">
+                    <a href="" class="mb-2">Terms of use</a><br>
                     <a href="">Privacy and cookies statement</a><br>
                 </div>
-                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="" class="mb-1">Facebook</a><br>
+                <div class="order-3 order-md-4 col-4 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-2">Facebook</a><br>
                     <a href="">Instagram</a><br>
                 </div>
-                <div class="col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="" class="mb-1">Install for phone</a><br>
+                <div class="order-5 col-12 col-md px-0 mr-0 mr-lg-5 mb-4">
+                    <a href="" class="mb-2">Install for phone</a><br>
                 </div>
             </div>
-            <p class="Copyright mt-3 mb-5 mb-md-0 text-center text-md-left">© 2022 Mysiit - ALL RIGHTS RESERVED</p>
+            <p class="Copyright mt-3 mb-5 mb-md-0 text-left">© 2022 Mysiit - ALL RIGHTS RESERVED</p>
         </div>
     </footer>
 
+    <!-- Mobile navbar -->
     <div class="navbar MobileNavbar p-0 w-100 d-md-none">
-        <button class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/homew.png" alt="">
+        <button id="MobileHomeButton" class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon mb-1" src="icons/home_white.png" alt="">
             <p>Home</p>
         </button>
-        <button class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/heartw.png" alt="">
+        <button id="MobileWishlistsButton" class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon mb-1" src="icons/heart_white.png" alt="">
             <p>Wishlists</p>
         </button>
-        <button class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('FilterSection')">
-            <img class="MobileNavIcon" src="icons/loupew.png" alt="">
+        <button id="MobileSearchButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('FilterSection', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/loupe_white.png" alt="">
             <p>Search</p>
         </button>
-        <button onclick="window.location.href='login.html'" class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/account_white.png" alt="">
+        <button id="MobileLoginButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('LoginOverlay', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/account_white.png" alt="">
             <p>Login</p>
         </button>
-        <button  class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('NavMenu')">
-            <img class="MobileNavIcon" src="icons/menuw.png" alt="">
+        <button id="MobileMenuButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('NavMenu', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/menu_white.png" alt="">
             <p>Menu</p>
         </button>
     </div>
 
-    <div id="NavMenu" class="NavOverlay">
-        <a href="javascript:void(0)" class="CloseOverlayButton" onclick="CloseNavMenu('NavMenu')">&times;</a>
-        <div class="OverlayContent w-100">
-            <a href="#">Home</a>
-            <a href="#">Wishlist</a>
-            <a href="#">Search</a>
-            <a href="#">Profile</a>
-            <a href="login.html">Login</a>
+    <!-- Opened mobile nav menu -->
+    <div id="NavMenu" class="NavOverlay NavOverlayOpaque">
+        <div class="w-100 text-right">
+            <button onclick="CloseNavMenu('NavMenu')" class="CloseOverlay m-4">&times;</button>
+        </div>
+        <div class="OverlayContent mx-4">
+            <a href="#" class="m-0" onclick="OpenNavMenu('FilterSection', 'MobileSearchButton')">Search</a>
+            <hr class="my-2">
+            <a href="profile.html" class="m-0">Profile</a>
+            <hr class="my-2">
+            <a href="#" class="m-0">Wishlist</a>
+            <hr class="my-2">
+            <a href="#" class="m-0" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')">Login</a>
+            <hr class="my-2">
+            <a href="#" class="m-0">Languages</a>
+            <hr class="my-2">
         </div>
     </div>
 

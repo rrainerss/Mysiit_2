@@ -16,6 +16,7 @@
         --black: #212120;
         --purple: #41198F;
         --hoverpurple: #3C1B8A;
+        --overlaypurple: rgba(65, 25, 143, 0.8);
         --green: #00c400;
         --blue: #3b5998;
     }
@@ -38,8 +39,18 @@
     .navbar
     {
         height: 5rem;
-        z-index: 2;
+        z-index: 4;
         background-color: var(--bg);
+    }
+    @media only screen and (max-width: 767px)
+    {
+        .TopNavbar
+        {
+            width: 100%;
+            position: fixed;
+            transition: all 250ms ease;
+            z-index: 4;
+        }
     }
     .dropdown-toggle::after
     {
@@ -115,6 +126,21 @@
     {
         overflow-y: scroll;
     }
+    @media only screen and (max-width: 575px)
+    {
+        .MobileNavbarTopSpacer
+        {
+            height: 4rem;
+        }        
+    }
+    @media only screen and (min-width: 576px) and (max-width: 767px)
+    {
+        .MobileNavbarTopSpacer
+        {
+            height: 5rem;
+        }        
+    }
+
 /*#endregion*/
 
 /*#region Page width and spacing from sides*/
@@ -128,6 +154,10 @@
             .MaxWidth
             {
                 padding: 0 1rem 0 1rem;
+            }
+            .ResultMaxWidth
+            {
+                padding: 0 0 0 1rem;
             }
             .MaxWidthMargin
             {
@@ -157,6 +187,10 @@
             {
                 padding: 0 1rem 0 1rem;
             }
+            .ResultMaxWidth
+            {
+                padding: 0 0 0 1rem;
+            }
             .MaxWidthMargin
             {
                 margin: 0 0rem 0 0rem;
@@ -184,6 +218,10 @@
             .MaxWidth
             {
                 padding: 0 1.5rem 0 1.5rem;
+            }
+            .ResultMaxWidth
+            {
+                padding: 0 0 0 1.5rem;
             }
             .MaxWidthMargin
             {
@@ -213,6 +251,10 @@
             {
                 padding: 0 2rem 0 2rem;
             }
+            .ResultMaxWidth
+            {
+                padding: 0 0 0 2rem;
+            }
             .MaxWidthMargin
             {
                 margin: 0 1rem 0 1rem;
@@ -240,6 +282,10 @@
             .MaxWidth
             {
                 padding: 0 2.5rem 0 2.5rem;
+            }
+            .ResultMaxWidth
+            {
+                padding: 0 0 0 2.5rem;
             }
             .MaxWidthMargin
             {
@@ -631,13 +677,6 @@
         font-weight: bold;
         display: inline-block;
         height: 1rem;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .HeaderSizingBox
-        {
-            height: 21rem;
-        }
     }
 /*#endregion*/
 
@@ -1078,6 +1117,35 @@
     {
         width: 60%;
     }
+    .CloseLoginOverlay
+    {
+        position: absolute;
+        background-color: var(--purple);
+        transition: all 150ms;
+    }
+    .CloseLoginOverlay:active, .CloseLoginOverlay:hover
+    {
+        background-color: var(--lightgray);
+    }
+    @media only screen and (max-width: 767px)
+    {
+        .LoginOverlayContainer
+        {
+            position: fixed;
+            width: 90vw;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            height: calc(100vh - 3.3rem - 10vw);
+        }
+        .LoginBox
+        {
+            width: 80%;
+        }
+        .CloseLoginOverlay
+        {
+            right: 0rem;
+        }
+    }
     .LoginBox > h3
     {
         font-weight: 700;
@@ -1246,9 +1314,13 @@
         left: 0;
         width: 100%;
         position: fixed;
-        background-color: var(--purple);
+        background-color: var(--overlaypurple);
         overflow-x: hidden;
         transition: 200ms;
+    }
+    .NavOverlayOpaque
+    {
+        background-color: var(--purple);
     }
     .NavOverlay > .OverlayContent
     {
@@ -1279,103 +1351,108 @@
 /*#endregion*/
 
 /*#region OVERLAY Filter overlay*/
-.HiddenSearchSection
-{
-    margin-top: 0;
-    z-index: 4;
-    text-align: center;
-}
-.HiddenSearchSection > span
-{
-    background-color: transparent;
-    border: 1px solid transparent;
-}
-.HiddenSearchSection .SearchEl1, .HiddenSearchSection .SearchEl2, .HiddenSearchSection .SearchEl3, .HiddenSearchSection .SearchEl4
-{
-    background-color: white;
-}
-@media only screen and (min-width: 576px)
-{
-    .HiddenSearchSection .SearchEl3, .HiddenSearchSection .SearchEl4
+    .HiddenSearchSection
     {
-        width: 48.75%;
-    }        
-}
-.FilterOverlayBox
-{
-    position: absolute;
-    width: 100%;
-    max-width: 60rem;
-}
-@media only screen and (min-width: 767px)
-{
+        margin-top: 0;
+        z-index: 4;
+        text-align: center;
+    }
+    .HiddenSearchSection > span
+    {
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+    .HiddenSearchSection .SearchEl1, .HiddenSearchSection .SearchEl2, .HiddenSearchSection .SearchEl3, .HiddenSearchSection .SearchEl4
+    {
+        background-color: white;
+    }
+    @media only screen and (min-width: 576px)
+    {
+        .HiddenSearchSection .SearchEl3, .HiddenSearchSection .SearchEl4
+        {
+            width: 48.75%;
+        }        
+    }
     .FilterOverlayBox
     {
-        width: auto;
-        left: 2rem;
-        right: 2rem;
-        top: 2rem;
+        position: absolute;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 5vw;
+        max-width: 60rem;
+    }
+    @media only screen and (min-width: 767px)
+    {
+        .FilterOverlayBox
+        {
+            width: auto;
+            margin: auto;
+            left: 2rem;
+            right: 2rem;
+            top: 2rem;
+        }
+        .FilterMain
+        {
+            border-radius: 1rem;
+        }
     }
     .FilterMain
     {
-        border-radius: 1rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        background-color: var(--bg);
+        overflow: hidden;
     }
-}
-.FilterMain
-{
-    width: 100%;
-    background-color: var(--bg);
-}
-.CloseMobileSearch
-{
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    background-color: var(--purple);
-}
-.CloseMobileSearch:active, .CloseMobileSearch:hover
-{
-    background-color: var(--lightgray);
-}
-.FilterHeader
-{
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: var(--black);
-}
-.FilterDividerLine
-{
-    border-bottom: 1px solid var(--lightgray);
-}
-.ClearFilterButton
-{
-    font-weight: 600;
-    font-size: 0.8rem;
-    line-height: 2.6rem;
-}
-.ClearFilterButton:link, .ClearFilterButton:visited, .ClearFilterButton:hover, .ClearFilterButton:active
-{
-    color: var(--black);
-}
-.ShowFilterButton
-{
-    width: 7rem !important;
-    color: white;
-    font-weight: 600;
-    background-color: var(--purple);
-    border: 1px solid var(--purple);
-}
-.ShowFilterButton:hover, .ShowFilterButton:focus
-{
-    background-color: var(--black);
-    border: 1px solid var(--black);
-    transition: 150ms all;
-}
-.CloseFilterOverlayBox
-{
-    position: absolute;
-    margin-left: -4rem;
-}
+    .CloseMobileSearch
+    {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        background-color: var(--purple);
+        transition: all 150ms;
+    }
+    .CloseMobileSearch:active, .CloseMobileSearch:hover
+    {
+        background-color: var(--lightgray);
+    }
+    .FilterHeader
+    {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--black);
+    }
+    .FilterDividerLine
+    {
+        border-bottom: 1px solid var(--lightgray);
+    }
+    .ClearFilterButton
+    {
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 2.6rem;
+    }
+    .ClearFilterButton:link, .ClearFilterButton:visited, .ClearFilterButton:hover, .ClearFilterButton:active
+    {
+        color: var(--black);
+    }
+    .ShowFilterButton
+    {
+        width: 7rem !important;
+        color: white;
+        font-weight: 600;
+        background-color: var(--purple);
+        border: 1px solid var(--purple);
+    }
+    .ShowFilterButton:hover, .ShowFilterButton:focus
+    {
+        background-color: var(--black);
+        border: 1px solid var(--black);
+        transition: 150ms all;
+    }
+    .FilterFooter
+    {
+        background-color: var(--bordergray);
+    }
 /*#endregion*/
 
 /*#region OVERLAY Filter overlay checkboxes*/
@@ -1401,7 +1478,7 @@
     .FilterCheckboxContainer li label
     {
         display: inline-block;
-        border: 1px solid var(--black);
+        border: 1px solid var(--normalgray);
         color: var(--black);
         border-radius: 2rem;
         white-space: nowrap;
