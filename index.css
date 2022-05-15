@@ -1206,18 +1206,17 @@
         background-color: var(--bg);
         color: var(--black);
         height: 3.3rem;
-        font-size: 0.7rem;
-        z-index: 3;
+        font-size: 0.6rem;
+        z-index: 5;
+        transition: all 150ms ease-in-out;
     }
-
-
     .MobileNavbar a:link, .MobileNavbar a:visited, .MobileNavbar a:hover, .MobileNavbar a:active
     {
         color: var(--black);
     }
     .MobileNavButton
     {
-        color: white;
+        color: var(--lightergray);
         width: 20%;
         border: none;
         background-color: #41198F;
@@ -1229,52 +1228,54 @@
     }
     .MobileNavIcon
     {
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+    .ActiveGreenFilter
+    {
+        filter: invert(51%) sepia(95%) saturate(1470%) hue-rotate(80deg) brightness(90%) contrast(126%);
     }
 /*#endregion*/
 
 /*#region OVERLAY Menu overlay*/
     .NavOverlay
     {
-
         height: 0;
         z-index: 4;
         bottom: 0;
         left: 0;
         width: 100%;
         position: fixed;
-        background-color: #3c1b8ab7;
+        background-color: var(--purple);
         overflow-x: hidden;
         transition: 200ms;
     }
     .NavOverlay > .OverlayContent
     {
         position: relative;
-        top: 25%;
-        text-align: center;
     }
     .NavOverlay > .OverlayContent a, .NavOverlay > .CloseOverlayButton
     {
         text-decoration: none;
         margin-top: 1rem;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         color: white;
         display: block;
     }
-    .NavOverlay .OverlayContent a:hover, .NavOverlay .OverlayContent a:focus,
-    .NavOverlay > .CloseOverlayButton:hover, .NavOverlay > .CloseOverlayButton:focus
+    .NavOverlay .OverlayContent a:hover, .NavOverlay .OverlayContent a:focus
     {
-        color: var(--purple);
+        color: var(--green);
         transition: 150ms;
     }
-    .NavOverlay .CloseOverlayButton
+    .NavOverlay > .CloseOverlay
     {
-        position: absolute;
-        top: 2rem;
         right: 2rem;
-        font-size: 5rem;
     }
+    .OverlayContent hr
+    {
+        border-bottom: 1px solid white;
+    }
+
 /*#endregion*/
 
 /*#region OVERLAY Filter overlay*/
@@ -1325,18 +1326,16 @@
     width: 100%;
     background-color: var(--bg);
 }
-.NavOverlay .CloseFilterButton
+.CloseMobileSearch
 {
-    text-decoration: none;
-    font-size: 2.2rem;
-    color: var(--lightergray);
     position: absolute;
-    right: 1rem;
+    right: 1.5rem;
+    top: 1.5rem;
+    background-color: var(--purple);
 }
-.NavOverlay .CloseFilterButton:hover, .NavOverlay .CloseFilterButton:focus
+.CloseMobileSearch:active, .CloseMobileSearch:hover
 {
-    color: var(--purple);
-    transition: 150ms all;
+    background-color: var(--lightgray);
 }
 .FilterHeader
 {

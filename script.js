@@ -146,8 +146,32 @@
     const { body, documentElement } = document;
     let { ScrollTop } = document.documentElement;
 
-    function OpenNavMenu(MenuID)
+    function OpenNavMenu(MenuID, ButtonID)
     {
+        $('.ActiveGreenFilter').removeClass('ActiveGreenFilter');
+        document.getElementById('MobileMenuButton').children[0].src="icons/menu_white.png";
+
+        var Overlays = document.querySelectorAll('.NavOverlay');
+
+        for(i = 0; i < Overlays.length; i++)
+        {
+            if(Overlays[i].style.height == '100%')
+            {
+                Overlays[i].style.height = 0;
+            }
+        }
+
+        if(ButtonID)
+        {
+            document.getElementById(ButtonID).children[0].classList.add("ActiveGreenFilter");
+            document.getElementById(ButtonID).children[1].classList.add("ActiveGreenFilter");
+
+            if(ButtonID == 'MobileMenuButton')
+            {
+                document.getElementById(ButtonID).children[0].src="icons/close_white.png";
+            }            
+        }
+
         ScrollTop = documentElement.ScrollTop;
         body.style.top = `-${ScrollTop}px`;
         body.classList.add("ScrollDisabled");
@@ -157,6 +181,12 @@
     }
     function CloseNavMenu(MenuID)
     {
+        document.getElementById(MenuID).value = '';
+
+        $('.ActiveGreenFilter').removeClass('ActiveGreenFilter');
+
+        document.getElementById('MobileMenuButton').children[0].src="icons/menu_white.png";
+
         body.classList.remove("ScrollDisabled");
         documentElement.style.scrollBehavior = "auto";
         documentElement.ScrollTop = ScrollTop;
@@ -167,29 +197,6 @@
         document.getElementsByTagName('html')[0].style.overflowY = "scroll";
     }
 ///////////
-
-function OpenNavMenuI(MenuxID)
-{
-    ScrollTop = documentElement.ScrollTop;
-    body.style.top = `-${ScrollTop}px`;
-    body.classList.add("ScrollDisabled");
-
-    document.getElementById(MenuxID).style.height = "100%";
-    document.getElementsByTagName('html')[0].style.overflowY = "hidden";
-}
-function CloseNavMenu(MenuxID)
-{
-    body.classList.remove("ScrollDisabled");
-    documentElement.style.scrollBehavior = "auto";
-    documentElement.ScrollTop = ScrollTop;
-    documentElement.style.removeProperty("scroll-behavior");
-    body.style.removeProperty("top");
-    
-    document.getElementById(MenuxID).style.height = "0%";
-    document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-}
-///////////
-
 
 
 //Input range

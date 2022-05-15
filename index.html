@@ -36,7 +36,7 @@
                         </button>
                     </li>
                     <li class="ml-2 nav-item dropdown mr-auto">
-                        <button onclick="OpenNavMenu('FilterSection')" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
+                        <button value="MobileSearchButton" onclick="OpenNavMenu('FilterSection', this.value)" class="PillElement FilterButton p-0 pl-3 m-0" type="button">
                             <p class="IconText m-0">­</p>
                         </button>
                     </li>
@@ -72,14 +72,13 @@
 
     <!--Filters (mobile search)-->
     <section class="FilterSection NavOverlay" id="FilterSection">
-        <div class="FilterOverlayBox mx-auto mb-5 mt-1">
-            <form id="FilterForm" class="FilterMain mb-0 mb-md-5">
+        <div class="FilterOverlayBox mx-auto mb-5 pb-5 pb-md-0">
+            <form id="FilterForm" class="FilterMain mb-2 mb-md-5">
                 <div class="MaxWidth px-xl-5 pt-3">
-                    <!--<div class="CloseFilterOverlayBox text-right w-100">
-                        <button onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseFilterOverlay m-3">&times;</button>
-                    </div>-->
-                    <a href="javascript:void(0)" class="CloseFilterButton" onclick="CloseNavMenu('FilterSection')">&times;</a>
                     <div class="my-4">
+                        <div class="w-100 text-right">
+                            <button type="button" onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseMobileSearch">&times;</button>
+                        </div>
                         <p class="FilterHeader w-100 d-md-none text-left">Search</p>
                         <section class="SearchSection HiddenSearchSection d-flex d-md-none justify-content-center">
                             <span class="FloatingSearch container-fluid">
@@ -159,9 +158,7 @@
     <!--Login popup overlay-->
     <section class="PopupScrollbar NavOverlay LoginOverlay" id="LoginOverlay">
         <div class="LoginOverlayContainer">
-            <div class="text-right">
-                <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay m-3">&times;</button>
-            </div>
+            <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay m-3">&times;</button>
             <form action="index.html" class="LoginBox mx-auto my-auto text-center">
                 <h3 class="mb-0">Welcome to Mysiit</h3>
                 <input class="LoginInput px-3 mt-4" type="text" placeholder="Username">
@@ -858,8 +855,8 @@
         <div class="container-fluid MaxWidth">
             <div class="row pt-5 mx-0 FooterRow">
                 <div class="order-1 col-4 col-md px-0 mr-0 mr-lg-5 mb-4">
-                    <a href="login.html" class="mb-2">Login</a><br>
-                    <a href="login.html">Register</a><br>
+                    <a href="#" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')" class="mb-2">Login</a><br>
+                    <a href="#" onclick="OpenNavMenu('LoginOverlay', 'MobileLoginButton')">Register</a><br>
                 </div>
                 <div class="order-2 col-4 col-md px-0 mr-0 mr-lg-5 mb-4">
                     <a href="" class="mb-2">Contact</a><br>
@@ -884,37 +881,44 @@
 
     <!-- Mobile navbar -->
     <div class="navbar MobileNavbar p-0 w-100 d-md-none">
-        <button class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/homew.png" alt="">
+        <button id="MobileHomeButton" class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon mb-1" src="icons/home_white.png" alt="">
             <p>Home</p>
         </button>
-        <button class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/heartw.png" alt="">
+        <button id="MobileWishlistsButton" class="MobileNavButton px-0 py-2 text-center">
+            <img class="MobileNavIcon mb-1" src="icons/heart_white.png" alt="">
             <p>Wishlists</p>
         </button>
-        <button class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('FilterSection')">
-            <img class="MobileNavIcon" src="icons/loupew.png" alt="">
+        <button id="MobileSearchButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('FilterSection', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/loupe_white.png" alt="">
             <p>Search</p>
         </button>
-        <button onclick="window.location.href='login.html'" class="MobileNavButton px-0 py-2 text-center">
-            <img class="MobileNavIcon" src="icons/account_white.png" alt="">
+        <button id="MobileLoginButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('LoginOverlay', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/account_white.png" alt="">
             <p>Login</p>
         </button>
-        <button  class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('NavMenu')">
-            <img class="MobileNavIcon" src="icons/menuw.png" alt="">
+        <button id="MobileMenuButton" class="MobileNavButton px-0 py-2 text-center" onclick="OpenNavMenu('NavMenu', this.id)">
+            <img class="MobileNavIcon mb-1" src="icons/menu_white.png" alt="">
             <p>Menu</p>
         </button>
     </div>
 
     <!-- Opened mobile nav menu -->
     <div id="NavMenu" class="NavOverlay">
-        <a href="javascript:void(0)" class="CloseOverlayButton" onclick="CloseNavMenu('NavMenu')">&times;</a>
-        <div class="OverlayContent w-100">
-            <a href="#" class="TextColorWMobileNav">Home</a>
-            <a href="#" class="TextColorWMobileNav">Wishlist</a>
-            <a href="#" class="TextColorWMobileNav">Search</a>
-            <a href="#" class="TextColorWMobileNav">Profile</a>
+        <div class="w-100 text-right">
+            <button onclick="CloseNavMenu('NavMenu')" class="CloseOverlay m-4">&times;</button>
+        </div>
+        <div class="OverlayContent mx-4">
+            <a href="#" class="m-0">Search</a>
+            <hr class="my-2">
+            <a href="#" class="m-0">Profile</a>
+            <hr class="my-2">
+            <a href="#" class="m-0">Wishlist</a>
+            <hr class="my-2">
             <a href="login.html">Login</a>
+            <hr class="my-2">
+            <a href="#" class="m-0">Languages</a>
+            <hr class="my-2">
         </div>
     </div>
 
