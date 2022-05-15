@@ -14,8 +14,8 @@
     .TagButton
     {
         cursor: grab !important;
-        background-color: var(--bg);
-        color: var(--black);
+        background-color: var(--lightbg);
+        color: var(--normalgray);
         font-weight: 600;
         width: auto;
     }
@@ -42,6 +42,25 @@
         background-color: var(--black);
         border: 1px solid var(--black);
     }
+    @media only screen and (max-width: 767px)
+    {
+        .TagFilterButton
+        {
+            height: 2rem;
+            width: 2rem;
+        }
+        .TagFilterButton > p::before
+        {
+            background-size: 1rem 1rem;
+            margin-left: -0.55rem;
+            margin-top: 0.45rem;
+        }
+        .TagButton
+        {
+            height: 2rem;
+            line-height: 1.9rem;
+        }
+    }
 /*#endregion*/
 
 /*#region Main*/
@@ -50,7 +69,7 @@
         .ResultContainer
         {
             display: inline-flex;
-            height: calc(100vh - 5rem - 2px);
+            height: calc(100vh - 5rem - 2px - 48px);
         }        
     }
 /*#endregion*/
@@ -79,6 +98,16 @@
     {
         width: 100%;
         cursor: auto;
+    }
+    .FloatingHeartButton
+    {
+        background-color: var(--lightbg);
+        position: absolute;
+        z-index: 5;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        margin: 0.5rem;
     }
     @media only screen and (min-width: 400px)
     {
@@ -117,38 +146,124 @@
     {
         cursor: auto;
     }
-    @media only screen and (min-width: 0px) and (max-width: 575px)
+    @media only screen and (min-width: 0px) and (max-width: 450px)
     {
         .MediumCard
         {
-            width: 25rem;
+            width: 100%;
         }
     }
-    @media only screen and (min-width: 576px) and (max-width: 767px)
+    @media only screen and (min-width: 450px) and (max-width: 669px)
     {
         .MediumCard
         {
-            width: 80%;
+            max-width: 24rem;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    @media only screen and (min-width: 670px) and (max-width: 767px)
+    {
+        .MediumCard
+        {
+            width: 48%;
+        }
+        .CardAdjustedText
+        {
+            width: 100%;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: space-between;
         }
     }
     @media only screen and (min-width: 768px) and (max-width: 991px)
     {
         .MediumCard
         {
-            width: 45%;
+            width: 24rem;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: center;
         }
     }
-    @media only screen and (min-width: 992px) and (max-width: 1199px)
+    @media only screen and (min-width: 992px) and (max-width: 1300px)
     {
-
+        .MediumCard
+        {
+            width: 24rem;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: center;
+        }
     }
-    @media only screen and (min-width: 1200px)
+    @media only screen and (min-width: 1301px) and (max-width: 1800px)
     {
-
+        .MediumCard
+        {
+            width: 48%;
+        }
+        .CardAdjustedText
+        {
+            width: 100%;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: space-between;
+        }
     }
+    @media only screen and (min-width: 1801px) and (max-width: 2000px)
+    {
+        .MediumCard
+        {
+            width: 32%;
+        }
+        .CardAdjustedText
+        {
+            width: 100%;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    @media only screen and (min-width: 2001px)
+    {
+        .MediumCard
+        {
+            width: 24rem;
+        }
+        .CardAdjustedText
+        {
+            width: 100%;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
 /*#endregion*/
 
 /*#region Map half*/
+    .MobileMap
+    {
+        height: 12rem;
+        background-image: url(images/map.png);
+        background-position: center;
+        background-size: cover;
+    }
     .MapHalf
     {
         -webkit-transition: all 400ms ease-in-out;

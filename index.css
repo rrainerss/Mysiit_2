@@ -40,7 +40,7 @@
     {
         height: 5rem;
         z-index: 4;
-        background-color: var(--bg);
+        background-color: var(--lightbg);
     }
     @media only screen and (max-width: 767px)
     {
@@ -1478,8 +1478,8 @@
     .FilterCheckboxContainer li label
     {
         display: inline-block;
-        border: 1px solid var(--normalgray);
-        color: var(--black);
+        border: 1px solid var(--bordergray);
+        color: var(--normalgray);
         border-radius: 2rem;
         white-space: nowrap;
         margin-right: 0.75rem;
