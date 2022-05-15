@@ -1,7 +1,7 @@
 /*#region Descriptive header*/
     .HeaderContainer
     {
-        height: 20rem;
+        height: 22rem;
         border-radius: 0.75rem;
         background-image: url('images/descriptive_header.png');
         background-size: cover;
@@ -48,81 +48,114 @@
         font-weight: 700;
         color: white;
     }
+    @media only screen and (max-width: 767px)
+    {
+        .HeaderDetailsContainer
+        {
+            max-width: 400px;
+            margin: auto;
+        }
+        .DescriptiveHeaderSection
+        {
+            padding: 0;
+        }
+        .HeaderContainer
+        {
+            border-radius: 0;
+        }
+        .HeaderContainer
+        {
+            height: 27rem;
+        }
+    }
 /*#endregion*/
 
 /*#region Descriptive header details*/
-    .HeaderDetails
-    {
-        font-size: 0.8rem;   
-        font-weight: 500;
-        color: var(--gray);
-    }
-    .HeaderDetails a:link, .HeaderDetails a:visited, .HeaderDetails a:hover, .HeaderDetails a:active
-    {
-        color: var(--gray);
-    }
-    .HeaderDetailsSpacer
-    {
-        border: 0.5px solid var(--bordergray);
-    }
-    .DetailsFavouriteButton
-    {
-        color: var(--black);
-        border: 1px solid var(--bordergray);
-        background-color: var(--lightbg);
-        font-weight: 500;
-        line-height: 2.4rem;
-        width: 7rem;
-    }
-    .DetailsFavouriteButton:active, .DetailsFavouriteButton:hover
-    {
-        background-color: var(--bordergray);
-        transition: all 150ms;
-    }
-    .DetailsFavouriteButton p::before
-    {
-        background-size: 0.75rem 0.75rem;
-        width: 0.75rem;
-        height: 0.75rem;
-        margin-left: -0.15rem;
-        margin-top: 0.8rem;
-        background-image: url("icons/heart.png");
-    }
-    .DetailsReservationButton
-    {
-        color: white;
-        border: 1px solid var(--green);
-        background-color: var(--green);
-        font-weight: 500;
-        line-height: 2.4rem;
-        width: 10rem;
-    }
-    .DetailsReservationButton:active, .DetailsReservationButton:hover
-    {
-        background-color: var(--black);
-        border: 1px solid var(--black);
-        transition: all 150ms;
-    }
+.HeaderDetails
+{
+    font-size: 0.8rem;   
+    font-weight: 500;
+    color: var(--gray);
+}
+.HeaderDetails a:link, .HeaderDetails a:visited, .HeaderDetails a:hover, .HeaderDetails a:active
+{
+    color: var(--gray);
+}
+.HeaderDetailsSpacer
+{
+    border: 0.5px solid var(--bordergray);
+}
+.DetailsFavouriteButton
+{
+    color: var(--black);
+    border: 1px solid var(--bordergray);
+    background-color: var(--lightbg);
+    font-weight: 500;
+    line-height: 2.4rem;
+    width: 7rem;
+}
+.DetailsFavouriteButton:active, .DetailsFavouriteButton:hover
+{
+    background-color: var(--bordergray);
+    transition: all 150ms;
+}
+.DetailsFavouriteButton p::before
+{
+    background-size: 0.75rem 0.75rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: -0.15rem;
+    margin-top: 0.8rem;
+    background-image: url("icons/heart.png");
+}
+.DetailsReservationButton
+{
+    color: white;
+    border: 1px solid var(--green);
+    background-color: var(--green);
+    font-weight: 500;
+    line-height: 2.4rem;
+    width: 10rem;
+}
+.DetailsReservationButton:active, .DetailsReservationButton:hover
+{
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    transition: all 150ms;
+}
 /*#endregion*/
 
 
 /*#region General*/
-    .LinkDeselected:link, .LinkDeselected:visited, .LinkDeselected:hover, .LinkDeselected:active
-    {
-        color: var(--lightgray);
-    }
-    .LinkSelected:link, .LinkSelected:visited, .LinkSelected:hover, .LinkSelected:active
-    {
-        color: var(--black) !important;
-    }
+.LinkDeselected:link, .LinkDeselected:visited, .LinkDeselected:hover, .LinkDeselected:active
+{
+    color: var(--lightgray);
+}
+.LinkSelected:link, .LinkSelected:visited, .LinkSelected:hover, .LinkSelected:active
+{
+    color: var(--black) !important;
+}
 /*#endregion*/
 
 /*#region Offers side*/
-    .RestaurantDescription
+.RestaurantDescription
+{
+    width: 100%;
+    display: flex;
+}
+@media only screen and (max-width: 991px)
+{
+    .DescriptionSide
     {
         width: 100%;
-        display: flex;
     }
+    .CalendarSide
+    {
+        width: 0;
+    }
+}
+@media only screen and (min-width: 992px)
+{
     .DescriptionSide
     {
         width: calc(100vw - 30rem);
@@ -131,303 +164,122 @@
     {
         width: 30rem;
     }
-    .DescriptionMenu a:link, .DescriptionMenu a:visited, .DescriptionMenu a:hover, .DescriptionMenu a:active
-    {
-        font-size: 1.1rem;
-        font-weight: bold;
-        text-underline-offset: 0.5rem;
-    }
-    .DescriptionFont
-    {
-        font-size: 0.8rem;
-    }
-    .DescriptionBox
-    {
-        max-width: 620px;
-    }
-    .DescriptionHeader
-    {
-        font-size: 1.1rem;
-        font-weight: bold;
-    }
-    .SquareCard
-    {
-        width: 12rem
-    }
-    .SquareCard img
-    {
-        aspect-ratio: 1 / 1;
-        border-radius: 0.3rem;
-    }
-    .DescriptionMap
-    {
-        height: 14rem;
-        background-image: url('images/map.png');
-        background-size: cover;
-        background-position: center;
-    }
+}
+.DescriptionMenu a:link, .DescriptionMenu a:visited, .DescriptionMenu a:hover, .DescriptionMenu a:active
+{
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-underline-offset: 0.5rem;
+}
+.DescriptionFont
+{
+    font-size: 0.8rem;
+}
+.DescriptionHeader
+{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.SquareCard
+{
+    width: 12rem
+}
+.SquareCard img
+{
+    aspect-ratio: 1 / 1;
+    border-radius: 0.3rem;
+}
+.DescriptionMap
+{
+    height: 14rem;
+    background-image: url('images/map.png');
+    background-size: cover;
+    background-position: center;
+}
 /*#endregion*/
 
 /*#region Food menu side*/
-    .FoodMenuCard
-    {
-        border-radius: 0.5rem;
-        overflow: hidden;
-        border: 1px solid var(--bordergray);
-    }
-    .FoodMenuCard > img
-    {
-        aspect-ratio: 125 / 139;
-    }
-    .FoodMenuText
-    {
-        font-weight: 500;
-    }
-    .FoodMenuTextBold
-    {
-        font-weight: 700;
-    }
+.FoodMenuCard
+{
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--bordergray);
+}
+.FoodMenuCard > img
+{
+    aspect-ratio: 125 / 139;
+}
+.FoodMenuText
+{
+    font-weight: 500;
+}
+.FoodMenuTextBold
+{
+    font-weight: 700;
+}
 /*#endregion*/
 
 /*#region Calendar*/
-    .CalendarWrapper
-    {
-        position: -webkit-sticky;
-        position: sticky;
-        top: calc(50% - 19rem);
-        background-color: white;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        width: 100%;
-        height: 38rem;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    .CalendarLine
-    {
-        border: 1px solid var(--lightestgray);
-    }
-    .InnerBox
-    {
-        max-width: 22rem;
-    }
-    .CheckInText
-    {
-        font-weight: 600;
-        font-size: 1rem;
-        padding-top: 1.2rem;
-        padding-bottom: 1.2rem;
-        background-color: var(--purple);
-        color: white;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-    }
-    .CheckInButton
-    {
-        background-color: var(--green);
-        border: 1px solid var(--green);
-        width: 12rem;
-        font-weight: bold;
-        line-height: 2.4rem;
-        color: white;
-    }
-    .CheckInButton:hover
-    {
-        background-color: var(--black);
-        border: 1px solid var(--black);
-        transition: all 150ms;
-    }
-    .TimePill
-    {
-        height: 3.2rem;
-        line-height: 3.1rem;
-        background: url("icons/time.png") no-repeat left;
-        background-size: 1.1rem;
-        background-position-x: 0.8rem;
-    }
-    .GuestsPill
-    {
-        height: 3.2rem;
-        line-height: 3.1rem;
-        background: url("icons/guest.png") no-repeat left;
-        background-size: 1.1rem;
-        background-position-x: 0.8rem;
-    }
-
-
-    
-/*#endregion*/
-
-
-
-
-/*#region MIN*/
-@media only screen and (max-width: 768px)
+.CalendarWrapper
 {
-    .CalendarSide{
-        display: none;
-    }
-
-    .PTextPriceDyDno{
-        display: none;
-    }
-
-    .PTextPriceDyDnt{
-        display: block;
-    }
-
-    .DescriptionSide
-    {
-        width: 100%;
-    }
-
-    .CeckInButtonRestMenu{
-        width: 100%;
-        border: none;
-        background-color: var(--green);
-        color: white;
-        position: fixed !important;
-        margin: 0;
-        
-    }
-
-    .HiddenOnBigDevRest{
-        display: block;
-    }
-
-    .FontBoldTextSizeLargeCheckIN{
-        font-size: larger;
-    }
-
-    .MaxWidthy{
-        padding: 0 0rem 0 0rem !important;
-        width: 100% !important;
-    }
-
-
-    .FilterOverlayBoxx{
-        border-radius: 0;
-    }
-
-    #FilterForm{
-        border-radius: 0rem;
-        bottom: -3rem;
-        position: absolute;
-    }
-
-    .WidthFullOneH{
-        padding: 0 0rem 0 0rem !important;
-        width: 100% !important;
-    }
-
-
-
-    /*#region Calendar*/
-    .CalendarWrapper
-    {
-        position: -webkit-sticky;
-        top: calc(50% - 19rem);
-        background-color: rgba(255, 255, 255, 0);
-        border-radius: 0rem;
-        font-size: 0.9rem;
-        width: 100%;
-        height: 38rem;
-        box-shadow: none;
-    }
-    .CalendarLine
-    {
-        border: 1px solid var(--lightestgray);
-        width: 100%;
-      
-    }
-    .InnerBox
-    {
-        max-width: 22rem;
-    }
-    .CheckInText
-    {
-        font-weight: 600;
-        font-size: 1rem;
-        padding-top: 1.2rem;
-        padding-bottom: 1.2rem;
-        background-color: var(--purple);
-        color: white;
-        border-top-left-radius: 0rem;
-        border-top-right-radius: 0rem;
-        width: 100% !important;
-    }
-
-
-
-    .CloseFilterButton{
-        background-color: rgb(219, 219, 219);
-        border-radius: 2rem;
-        height: 2rem;
-        width: 2rem;
-        margin-top: -0.3rem !important;
-        text-align: center;
-       line-height: 1;
-    }
-
-
-    .FoodMenuTextBold{
-        font-size: 0.9rem;
-    }
-
-    .FoodMenuText{
-        font-size: 0.8rem;
-    }
-    
-    .TextColorWMobileNav{
-        color: white !important;
-    }
-
-    .DetailsFavouriteButtono{
-        border: none;
-        text-decoration: none;
-        margin-top: 1rem !important;
-        margin-left: -1rem !important;
-    }
-
-    .DetailsFavouriteButtono:hover{
-        border: none;
-        text-decoration: none;
-    }
-    
-    
-/*#endregion*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(50% - 19rem);
+    background-color: white;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    height: 38rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-
-@media only screen and (min-width: 768px)
+.CalendarLine
 {
-    .HiddenOnBigDevRest{
-        display: none !important;
-    }
-
-    .FilterSectiont{
-        display: none !important;
-    }
-
-    .PTextPriceDyDno{
-        display: block;
-    }
-
-    .PTextPriceDyDnt{
-        display: none;
-    }
-
-    .DetailsFavouriteButtono{
-        display: none;
-    }
-
-    .hideonebigdevsk{
-        display: none;
-    }
-
-    .HidenDivOnBigDevnm{
-        display: none;
-    }
+    border: 1px solid var(--lightestgray);
 }
-
-
+.InnerBox
+{
+    max-width: 22rem;
+}
+.CheckInText
+{
+    font-weight: 600;
+    font-size: 1rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    background-color: var(--purple);
+    color: white;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.CheckInButton
+{
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    width: 12rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    color: white;
+}
+.CheckInButton:hover
+{
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    transition: all 150ms;
+}
+.TimePill
+{
+    height: 3.2rem;
+    line-height: 3.1rem;
+    background: url("icons/time.png") no-repeat left;
+    background-size: 1.1rem;
+    background-position-x: 0.8rem;
+}
+.GuestsPill
+{
+    height: 3.2rem;
+    line-height: 3.1rem;
+    background: url("icons/guest.png") no-repeat left;
+    background-size: 1.1rem;
+    background-position-x: 0.8rem;
+}
 /*#endregion*/

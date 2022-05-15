@@ -198,62 +198,6 @@
     }
 ///////////
 
-
-//Input range
-//NEEDS IMPROVEMENTS
-    const allRanges = document.querySelectorAll(".RangeWrapper");
-    allRanges.forEach(wrap =>
-    {
-        const range = wrap.querySelector(".ValueRange");
-        const bubble = wrap.querySelector(".RangeOutput");
-        var amount = 0;
-
-        range.addEventListener("input", () => {
-            SetBubble(range, bubble, amount);
-        });
-
-        document.querySelector("#InputRangeButtonDown").addEventListener("click", () => {
-            amount = -1;
-            SetBubble(range, bubble, amount);
-        });
-
-        document.querySelector("#InputRangeButtonUp").addEventListener("click", () => {
-            amount = 1;
-            SetBubble(range, bubble, amount);
-        });
-
-        SetBubble(range, bubble, amount);
-    });
-
-    function SetBubble(range, bubble, amount)
-    {
-        var val = range.value;
-        val = Number(val);
-        const min = range.min ? range.min : 0;
-        const max = range.max ? range.max : 100;
-
-        if(amount != 0)
-        {
-            var val2 = val + amount;
-            range.value = val2;
-        }
-        else
-        {
-            var val2 = val;
-        }
-
-        const newVal = Number(((val2 - min) * 100) / (max - min));
-
-        bubble.innerHTML = '\u20AC ' + val2;
-
-        var rangeWidth = document.getElementsByClassName("ValueRange")[0].offsetWidth;
-        var bubbleWidth = document.getElementsByClassName("RangeOutput")[0].offsetWidth;
-        var calcRange = rangeWidth - bubbleWidth;
-        
-        bubble.style.left = ((calcRange / 100) * newVal) + `px`;
-    }
-///////////
-
 //Result map expansion
     function ExpandResultMap()
     {
