@@ -141,6 +141,10 @@
     {
         font-size: 0.8rem;
     }
+    .DescriptionBox
+    {
+        max-width: 620px;
+    }
     .DescriptionHeader
     {
         font-size: 1.1rem;
