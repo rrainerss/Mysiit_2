@@ -278,13 +278,6 @@
 /*#endregion*/
 
 /*#region Calendar*/
-@media (pointer:coarse)
-{
-    .CardNavButton
-    {
-        display: block !important;
-    }
-}
 .CalendarWrapper
 {
     height: 37rem;
@@ -358,5 +351,7 @@
     {
         background-color: var(--green);
         border: none;
+        color: white;
+        font-weight: 600;
     }
 /*#enddregion*/
