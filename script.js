@@ -56,6 +56,20 @@
     });
 ///////////
 
+//swiper links
+$('.swiper-links').each(function (index, element)
+{
+    $(this).addClass('swiper-links' + index);
+
+    new Swiper('.swiper-links' + index, {
+        grabCursor: true,
+        touchEventsTarget: "container",
+        freeMode: true,
+        slidesPerView: 'auto'
+    });
+});
+///////////
+
 //hearts
     $(".HeartButton").click( function (){
         if($(this).val() == 0)
