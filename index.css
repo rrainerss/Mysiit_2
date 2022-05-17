@@ -431,35 +431,14 @@
         width: 2.6rem;
         background-color: var(--purple);
         border: 1px solid var(--purple);
+        background-image: url("icons/filter.png");
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .FilterButton > p::before
     {
-        background-image: url("icons/filter.png");
-        background-size: 1rem 1rem;
-        margin-left: -0.25rem;
-        background-repeat: no-repeat;
-        margin-top: 0.75rem;
-    }
-    @-moz-document url-prefix()
-    {
-        .FilterButton > p::before
-        {
-            margin-top: -0.5rem !important;
-        }
-    }
-    @-moz-document url-prefix()
-    {
-        .TagFilterButton > p::before
-        {
-            margin-top: -0.5rem !important;
-        }
-    }
-    @supports (-webkit-touch-callout: none)
-    {
-        .FilterButton > p::before
-        {
-            margin-top: -0.5rem !important;
-        }
+        display: none;
     }
     .FilterButton > p::after
     {
@@ -663,10 +642,11 @@
     {
         width: 2.2rem;
     }
-    .navbar .FilterButton > p::before
+    .navbar .FilterButton
     {
         margin-top: 0.55rem;
         margin-left: -0.45rem;
+        background-size: 0.9rem 0.9rem;
     }
     .LangButton
     {
@@ -809,6 +789,7 @@
         text-align: center;
         border: none;
         margin: 0px;
+        padding: 0;
         width: 1.2rem;
         height: 2rem;
     }
@@ -817,6 +798,7 @@
         text-align: center;
         border: none;
         margin: 0px;
+        padding: 0;
         width: 2.3rem;
         height: 2rem;
     }
@@ -930,8 +912,10 @@
     }
     .CardNavButton
     {
-        width: 2rem;
-        height: 2rem;
+        width: 2rem !important;
+        height: 2rem !important;
+        aspect-ratio: 1 / 1;
+        padding: 0;
         border: 1px solid var(--bordergray);
         font-size: 1.5rem;
         line-height: 1.8rem;
@@ -1119,6 +1103,7 @@
         width: 2rem !important;
         height: 2rem !important;
         padding: 0;
+        aspect-ratio: 1 / 1;
         border-radius: 50%;
         border: none;
         font-size: 2rem;
@@ -1487,6 +1472,16 @@
     {
         background-color: var(--bordergray);
     }
+    @media only screen and (max-width: 767px)
+    {
+        .FilterFooter
+        {
+            width: 90vw;
+            position: fixed;
+            bottom: -3.3rem;
+            transition: all 150ms ease;
+        }
+    }
 /*#endregion*/
 
 /*#region OVERLAY Filter overlay checkboxes*/
@@ -1528,7 +1523,7 @@
     }
     .FilterCheckboxContainer li label
     {
-        padding: 0.5rem 0.75rem;
+        padding: 0.2rem 0.1rem;
         cursor: pointer;
     }
     .FilterCheckboxContainer li label::before
@@ -1584,73 +1579,3 @@
         }
     }
 /*#endregion*/
-
-/*#region OVERLAY Filter overlay slider*/
-    .RangeOutput
-    {
-        font-weight: bold;
-        color: var(--purple);
-        position: absolute;
-        width: 2rem;
-        text-align: center;
-        white-space: nowrap;
-        display: flex;
-        justify-content: center;
-    }
-    .ValueRange
-    {
-        padding: 0;
-        height: 2rem;
-        -webkit-appearance: none;
-        width: 100%;
-        background-color: transparent;
-    }
-    .ValueRange:focus
-    {
-        outline: none;
-    }
-    .ValueRange::-webkit-slider-runnable-track
-    {
-        height: 0.5rem;
-        cursor: pointer;
-        background: var(--lightgray);
-        border-radius: 0.25rem;
-    }
-    .ValueRange::-moz-range-track
-    {
-        height: 0.5rem;
-        cursor: pointer;
-        background: var(--lightgray);
-        border-radius: 0.25rem;
-    }
-    .ValueRange::-webkit-slider-thumb
-    {
-        background: var(--purple);
-        height: 2rem;
-        width: 2rem;
-        border-radius: 50%;
-        cursor: pointer;
-        -webkit-appearance: none;
-        margin-top: -0.75rem;
-    }
-    .ValueRange::-moz-range-thumb
-    {
-        background: var(--purple);
-        height: 2rem;
-        width: 2rem;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        -webkit-appearance: none;
-        margin-top: -0.75rem;
-    }
-    .InputRangeButton
-    {
-        width: 2.5rem;
-        height: 2.5rem;
-        line-height: 2.4rem;
-        color: var(--lightergray);
-        font-weight: 300;
-    }
-/*#endregion*/
-

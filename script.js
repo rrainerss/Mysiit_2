@@ -110,12 +110,19 @@ $('.swiper-links').each(function (index, element)
         var Minutes = String(InputTime).slice(-2);
         var Hours = '12';
 
-        function UpdateTime()
+        function UpdateTime(id)
         {
-            document.getElementsByClassName('IncTime')[0].placeholder = Hours + ':' + Minutes;
+            if(id)
+            {
+                document.getElementsByClassName('IncTime')[id].placeholder = Hours + ':' + Minutes;
+            }
+            else
+            {
+                document.getElementsByClassName('IncTime')[0].placeholder = Hours + ':' + Minutes;
+            }
         }
 
-        function AddTime()
+        function AddTime(id)
         {
             if (Minutes  < 45)
             {
@@ -131,10 +138,10 @@ $('.swiper-links').each(function (index, element)
                     Hours = 0;
                 } 
             }
-            UpdateTime();
+            UpdateTime(id);
         }
 
-        function SubTime()
+        function SubTime(id)
         {
             if (Minutes > 0)
             {
@@ -150,7 +157,7 @@ $('.swiper-links').each(function (index, element)
                     Minutes = 45;
                 }
             }
-            UpdateTime();
+            UpdateTime(id);
         }        
     }
 
@@ -162,6 +169,11 @@ $('.swiper-links').each(function (index, element)
 
     function OpenNavMenu(MenuID, ButtonID)
     {
+        if(MenuID == 'FilterSection')
+        {
+            document.getElementsByClassName('FilterFooter')[0].style.bottom = '3.3rem';
+        }
+
         $('.ActiveGreenFilter').removeClass('ActiveGreenFilter');
         document.getElementById('MobileMenuButton').children[0].src="icons/menu_white.png";
 
@@ -195,6 +207,9 @@ $('.swiper-links').each(function (index, element)
     }
     function CloseNavMenu(MenuID)
     {
+
+        document.getElementsByClassName('FilterFooter')[0].style.bottom = '-3.3rem';
+
         document.getElementById(MenuID).value = '';
 
         $('.ActiveGreenFilter').removeClass('ActiveGreenFilter');

@@ -24,28 +24,14 @@
         width: 2.6rem;
         background-color: var(--purple);
         border: 1px solid var(--purple);
+        background-image: url("icons/filter.png");
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .TagFilterButton > p::before
     {
-        background-image: url("icons/filter.png");
-        background-size: 1rem 1rem;
-        margin-left: -0.25rem;
-        margin-top: 0.75rem;
-        background-repeat: no-repeat;
-    }
-    @-moz-document url-prefix()
-    {
-        .TagFilterButton > p::before
-        {
-            margin-top: -0.5rem !important;
-        }
-    }
-    @supports (-webkit-touch-callout: none)
-    {
-        .TagFilterButton > p::before
-        {
-            margin-top: -0.5rem !important;
-        }
+        display: none;
     }
     .TagFilterButton > p::after
     {
@@ -60,6 +46,7 @@
     {
         .TagFilterButton
         {
+            background-size: 0.9rem 0.9rem;
             height: 2rem;
             width: 2rem;
         }

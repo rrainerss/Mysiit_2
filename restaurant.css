@@ -9,8 +9,10 @@
     }
     .BackButton
     {
-        width: 2.6rem;
-        height: 2.6rem;
+        width: 2.6rem !important;
+        height: 2.6rem !important;
+        padding: 0;
+        color: var(--black);
         border-radius: 50%;
         line-height: 2.45rem;
         font-size: 1.6rem;
@@ -278,6 +280,13 @@
 /*#endregion*/
 
 /*#region Calendar*/
+    @media (pointer:coarse)
+    {
+        .CardNavButton
+        {
+            display: block !important;
+        }
+    }
     .CalendarWrapper
     {
         position: -webkit-sticky;
@@ -370,4 +379,4 @@
             bottom: 0rem;
         }
     }
-/*#enddregion*/
+/*#endregion*/

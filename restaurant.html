@@ -130,7 +130,7 @@
                         </ul>
                     </div>
                     <div class="FilterDividerLine"></div>
-                    <div class="mt-4">
+                    <div class="mt-4 mb-5 pb-5 mb-md-0 pb-md-0">
                         <p class="FilterHeader mb-4 w-100 text-md-left">Facilities</p>
                         <ul class="FilterCheckboxContainer FilterUl">
                             <li><input type="checkbox" class="checkbox" id="checkboxZR" value=""><label for="checkboxZR">TV</label></li>
@@ -160,7 +160,7 @@
         <div class="LoginOverlayContainer d-flex">
             <button onclick="CloseNavMenu('LoginOverlay')" class="CloseOverlay CloseLoginOverlay m-4">&times;</button>
             <form action="index.html" class="LoginBox mx-auto my-auto text-center">
-                <h3 class="mb-0">Welcome to Mysiit</h3>
+                <h3 class="mb-0 px-3">Welcome to Mysiit</h3>
                 <input class="LoginInput px-3 mt-4" type="text" placeholder="Username">
                 <input class="LoginInput px-3 mt-4" type="password" placeholder="Password">
                 <div class="w-100 row SmallLoginText m-0 mt-3">
@@ -604,7 +604,7 @@
                     </div>
                     <div class="CalendarLine my-3"></div>
                     <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons">
-                        <div class="mx-auto my-2 px-2">
+                        <div class="mx-auto my-2 px-1">
                             <p class="mb-0 DarkGrayText"><b>Time</b></p>
                             <div class="Incrementor DarkGrayText PillElement TimePill text-right pr-2">
                                 <button class="ValueButton text-center p-0 Decrease" onclick="SubTime()" value="Decrease Value">-</button>
@@ -612,7 +612,7 @@
                                 <button class="ValueButton text-center p-0 Increase" onclick="AddTime()" value="Increase Value">+</button>
                             </div>
                         </div>
-                        <div class="mx-auto my-2 px-2">
+                        <div class="mx-auto my-2 px-1">
                             <p class="mb-0 DarkGrayText"><b>Guests</b></p>
                             <div class="Incrementor DarkGrayText PillElement GuestsPill text-right pr-3">
                                 <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(1)" value="Decrease Value">-</button>
@@ -785,17 +785,17 @@
                         <div class="col px-0">29</div>
                         <div class="col px-0">30</div>
                     </div>
-                    <div class="CalendarLine my-3"></div>
+                    <div class="CalendarLine my-2 my-sm-3"></div>
                     <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons">
-                        <div class="mx-auto my-2 px-2">
+                        <div class="mx-auto my-2 px-1">
                             <p class="mb-0 DarkGrayText"><b>Time</b></p>
                             <div class="Incrementor DarkGrayText PillElement TimePill text-right pr-2">
-                                <button class="ValueButton text-center p-0 Decrease" onclick="SubTime()" value="Decrease Value">-</button>
+                                <button class="ValueButton text-center p-0 Decrease" onclick="SubTime(1)" value="Decrease Value">-</button>
                                 <input title="NumberInput" class="IncTime" type="text" readonly placeholder="12:30">
-                                <button class="ValueButton text-center p-0 Increase" onclick="AddTime()" value="Increase Value">+</button>
+                                <button class="ValueButton text-center p-0 Increase" onclick="AddTime(1)" value="Increase Value">+</button>
                             </div>
                         </div>
-                        <div class="mx-auto my-2 px-2">
+                        <div class="mx-auto my-2 px-1">
                             <p class="mb-0 DarkGrayText"><b>Guests</b></p>
                             <div class="Incrementor DarkGrayText PillElement GuestsPill text-right pr-3">
                                 <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(1)" value="Decrease Value">-</button>
@@ -804,7 +804,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-4 mx-4">
+                    <div class="d-flex justify-content-center mt-0 mt-sm-4 mx-4">
                         <button type="submit" class="PillElement CheckInButton mb-4">Check-in</button>
                     </div>
                 </div>
