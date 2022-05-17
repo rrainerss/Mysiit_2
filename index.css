@@ -437,8 +437,29 @@
         background-image: url("icons/filter.png");
         background-size: 1rem 1rem;
         margin-left: -0.25rem;
-        margin-top: 0.75rem;
         background-repeat: no-repeat;
+        margin-top: 0.75rem;
+    }
+    @-moz-document url-prefix()
+    {
+        .FilterButton > p::before
+        {
+            margin-top: -0.5rem !important;
+        }
+    }
+    @-moz-document url-prefix()
+    {
+        .TagFilterButton > p::before
+        {
+            margin-top: -0.5rem !important;
+        }
+    }
+    @supports (-webkit-touch-callout: none)
+    {
+        .FilterButton > p::before
+        {
+            margin-top: -0.5rem !important;
+        }
     }
     .FilterButton > p::after
     {
@@ -1095,12 +1116,13 @@
 /*#region OVERLAY General elements*/
     .CloseOverlay
     {
-        width: 2rem;
-        height: 2rem;
+        width: 2rem !important;
+        height: 2rem !important;
+        padding: 0;
         border-radius: 50%;
         border: none;
         font-size: 2rem;
-        line-height: 2rem;
+        line-height: 2.2rem;
         color: var(--lightgray);
         background-color: var(--bg);
         font-weight: 200;

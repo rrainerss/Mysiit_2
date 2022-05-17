@@ -33,6 +33,20 @@
         margin-top: 0.75rem;
         background-repeat: no-repeat;
     }
+    @-moz-document url-prefix()
+    {
+        .TagFilterButton > p::before
+        {
+            margin-top: -0.5rem !important;
+        }
+    }
+    @supports (-webkit-touch-callout: none)
+    {
+        .TagFilterButton > p::before
+        {
+            margin-top: -0.5rem !important;
+        }
+    }
     .TagFilterButton > p::after
     {
         display: none;
@@ -136,26 +150,59 @@
     {
         cursor: auto;
     }
-    @media only screen and (min-width: 0px) and (max-width: 450px)
+    @media only screen and (min-width: 0px) and (max-width: 767px)
     {
         .MediumCard
         {
             width: 100%;
         }
+        .CardAdjustedText
+        {
+            width: 100%;
+        }
+        .ResultCardRow
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .CardReserveButton
+        {
+            width: 8rem;
+        }
+        .CardReserveButtonContainer
+        {
+            width: 100%;
+        }
+        .CardHalfContainer
+        {
+            display: flex;
+        }
+        .CardImageHalf
+        {
+            width: clamp(1rem, 45vw, 25rem);
+        }
+        .CardImageHalf img
+        {
+            object-fit: cover;
+        }
     }
-    @media only screen and (min-width: 450px) and (max-width: 669px)
+    @media only screen and (min-width: 768px) and (max-width: 991px)
     {
         .MediumCard
         {
-            max-width: 24rem;
+            width: 24rem;
         }
         .ResultCardRow
         {
             display: flex;
             justify-content: center;
         }
+        :root
+        {
+            --result_offset: 0rem;
+        }
     }
-    @media only screen and (min-width: 670px) and (max-width: 767px)
+    @media only screen and (min-width: 992px) and (max-width: 1300px)
     {
         .MediumCard
         {
@@ -170,29 +217,9 @@
             display: flex;
             justify-content: space-between;
         }
-    }
-    @media only screen and (min-width: 768px) and (max-width: 991px)
-    {
-        .MediumCard
+        :root
         {
-            width: 24rem;
-        }
-        .ResultCardRow
-        {
-            display: flex;
-            justify-content: center;
-        }
-    }
-    @media only screen and (min-width: 992px) and (max-width: 1300px)
-    {
-        .MediumCard
-        {
-            width: 24rem;
-        }
-        .ResultCardRow
-        {
-            display: flex;
-            justify-content: center;
+            --result_offset: 15rem;
         }
     }
     @media only screen and (min-width: 1301px) and (max-width: 1800px)
