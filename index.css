@@ -1523,13 +1523,13 @@
     }
     .FilterCheckboxContainer li label
     {
-        padding: 0.2rem 0.1rem;
+        padding: 0.3rem 0rem;
         cursor: pointer;
     }
     .FilterCheckboxContainer li label::before
     {
         display: inline-block;
-        padding: 2px 6px 2px 2px;
+        padding-left: 1rem;
         content: "\f067";
         transition: 150ms all;
         opacity: 0;
@@ -1561,21 +1561,5 @@
     .FilterUl
     {
         padding-inline-start: 0px !important;
-    }
-    @media only screen and (max-width: 575px)
-    {
-        .FilterCheckboxLabel
-        {
-            width: 100%;
-            margin-left: 2rem;
-        }
-    }
-    @media only screen and (min-width: 576px)
-    {
-        .FilterSmallText p
-        {
-            font-size: 0.8rem;
-            line-height: 1.4rem;
-        }
     }
 /*#endregion*/
