@@ -282,7 +282,7 @@
 /*#region Calendar*/
     @media (pointer:coarse)
     {
-        .CardNavButton
+        .CalendarWrapper .CardNavButton
         {
             display: block !important;
         }
