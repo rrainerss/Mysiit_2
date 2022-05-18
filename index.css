@@ -836,7 +836,64 @@
             margin-left: -1.6rem;
         }
     }
-
+    .LocationSearchFilters
+    {
+        display: none;
+        width: 100%;
+        margin-left: 100%;
+        margin-right: 100%;
+        text-align: start;
+    }
+    .LocationSearchFilters .LocationSearchResult
+    {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .LocationSearchFilters .LocationSearchResult:hover, .LocationSearchFilters .LocationSearchResult:active
+    {
+        background-color: var(--bordergray);
+        padding-left: 0.5rem;
+        transition: all 150ms;
+    }
+    .LocationSearchFloating
+    {
+        display: none;
+        width: 100%;
+        margin-left: 100%;
+        margin-right: 100%;
+        text-align: start;
+        z-index: 2;
+        background-color: var(--purple);
+        padding: 0 1rem 0 1rem;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: 3.5rem;
+        width: 35%;
+        right: 0;
+    }
+    @media only screen and (min-width: 992px)
+    {
+        .LocationSearchFloating
+        {
+            width: 70%;
+            right: -17.5%;
+        }
+    }
+    .LocationSearchFloating .LocationSearchResult
+    {
+        color: white;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        padding: 0;
+    }
+    .LocationSearchFloating .LocationSearchResult:hover, .LocationSearchFloating .LocationSearchResult:active
+    {
+        color: var(--bordergray);
+        padding-left: 0.5rem;
+        transition: all 150ms;
+    }
 /*#endregion*/
 
 

@@ -300,3 +300,28 @@ $('.swiper-links').each(function (index, element)
         lastScrollTop = scrollTop;
     });
 ///////////
+
+//Location search popup
+function LocationSearchPopup()
+{
+    var LocationSearchWithDropdown = document.getElementsByClassName('LocationSearchWithDropdown');
+    var LocationSearchResultBox = document.getElementsByClassName('LocationSearchResultBox');
+
+    document.querySelectorAll('.LocationSearchWithDropdown').forEach(element =>
+    {
+        element.addEventListener('input', event =>
+        {
+            ElementNumber = element.getAttribute('data-dropdown-id');
+            if (element.value !== '')
+            {
+                LocationSearchResultBox[ElementNumber].style.display = 'block';
+            }
+            else
+            {
+                LocationSearchResultBox[ElementNumber].style.display = 'none';
+            }
+        })
+    })
+}
+LocationSearchPopup();
+///////////
