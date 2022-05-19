@@ -6,7 +6,7 @@
     .HistoryCard
     {
         width: auto;
-        max-width: 52rem;
+        max-width: 54rem;
     }
     .HistoryCard
     {
@@ -308,6 +308,137 @@
 /*#endregion*/
 
 /*#region 3rd selection (settings)*/
-
+    .SettingsContainer
+    {
+        width: 100%;
+    }
+    @media only screen and (min-width: 768px)
+    {
+        .SettingsContainer
+        {
+            max-width: 54rem;
+        }
+    }
+    .SettingBlock
+    {
+        min-height: 43.2px;
+        display: flex;
+        align-items: center;
+    }
+    .SettingTextBox
+    {
+        width: calc(100% - 8rem);
+    }
+    .SettingOptionBox
+    {
+        width: 8rem;
+    }
+    .SettingTextLarge
+    {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .SettingTextSmall
+    {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--normalgray);
+    }
+    .SettingResetButton
+    {
+        font-weight: 500;
+        color: white;
+        background-color: var(--bordergray);
+        border: 1px solid var(--bordergray);
+        line-height: 2.2rem;
+    }
+    .SettingResetButton:hover, .SettingResetButton:active
+    {
+        background-color: var(--purple);
+        border: 1px solid var(--purple);
+        transition: all 150ms;
+    }
+    .SettingLogoutButton
+    {
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding-right: 1.8rem;
+        width: 7rem;
+        line-height: 2.2rem;
+        color: #ce0000;
+        font-weight: 500;
+        background-image: url(icons/exit.png);
+        background-size: 1.6rem 1.6rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position: 4.8rem;
+    }
+    .SettingLogoutButton:hover, .SettingLogoutButton:active
+    {
+        background-color: var(--bordergray);
+        border: 1px solid var(--bordergray);
+    }
 /*#endregion*/
 
+/*#region Green toggle*/
+    .GreenToggleLabel
+    {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .GreenToggleLabel input
+    { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .GreenToggleSlider
+    {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--bordergray);
+        -webkit-transition: 150ms;
+        transition: 150ms;
+    }
+    .GreenToggleSlider:before
+    {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 150ms;
+        transition: 150ms;
+    }
+    .GreenToggleLabel input:checked + .GreenToggleSlider
+    {
+        background-color: var(--green);
+    }
+    .GreenToggleLabel input:focus + .GreenToggleSlider
+    {
+        box-shadow: 0 0 1px var(--green);
+    }
+    .GreenToggleLabel input:checked + .GreenToggleSlider:before
+    {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    .GreenToggleSlider
+    {
+        border-radius: 1rem;
+    }
+    .GreenToggleSlider:before
+    {
+        border-radius: 50%;
+    }
+/*#endregion*/

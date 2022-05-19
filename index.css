@@ -496,6 +496,7 @@
 /*#region TOP NAVBAR Profile button*/
     .ProfileButton
     {
+        width: 7rem;
         color: white;
         border: 1px solid var(--darkergray);
         background-color: var(--darkergray);

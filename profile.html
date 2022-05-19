@@ -43,29 +43,6 @@
                 </ul>       
             </div>
             <div class="navbar w-50 w-md-100 p-0">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item d-none d-md-flex">
-                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Login</a>
-                    </li>
-                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
-                    <li class="nav-item d-none d-md-flex">
-                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Sign up</a>
-                    </li>
-                    <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
-                    <li class="nav-item dropdown d-flex">
-                        <button class="PillElement LangButton p-0 text-center m-0" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <p class="IconText m-0">English</p>
-                        </button>
-                        <div class="LangDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
-                            <div class="text-center">
-                                <div class="Triangle text-center"></div>
-                            </div>
-                            <a class="DropdownButton text-center" href="#">Latvian</a>
-                            <a class="DropdownButton text-center" href="#">Lithuanian</a>
-                            <br>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </nav>
     </div>
@@ -364,9 +341,9 @@
 
         <!-- 1st selection -->
         <div id="SelectedContainer1" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
-            <div class="mx-auto MaxWidth px-md-0 w-100">
+            <div class="mx-auto MaxWidth w-100">
                 <div class="FavouriteLarge w-100 d-flex flex-wrap justify-content-center">
-                    <div class="MaxWidth d-inline-flex flex-wrap CardRow my-5">
+                    <div class="d-inline-flex flex-wrap CardRow my-5">
 
                         <div class="HistoryCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
                             <div class="CardHalfContainer m-0 p-0 row w-100 h-100">
@@ -427,7 +404,7 @@
 
         <!-- 2nd selection -->
         <div id="SelectedContainer2" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
-            <div class="mx-auto MaxWidth px-md-0 w-100">
+            <div class="mx-auto px-md-0 w-100">
                 <div class="FavouriteLarge w-100 d-flex flex-wrap justify-content-center">
                     <div class="MaxWidth d-inline-flex flex-wrap CardRow my-5">
                         <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
@@ -736,9 +713,136 @@
         </div>
 
         <!-- 3rd selection -->
-        <div id="SelectedContainer3" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
-            <div class="SelectionContainer mx-auto MaxWidth px-md-0">
-                <p>CCCCCCCCCCCCCCCCCCCCCCCCCC</p>
+        <div id="SelectedContainer3" class="HiddenByDefault MaxWidth flex-wrap justify-content-center mx-auto w-md-100">
+            <div class="SettingsContainer mx-auto my-5">
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Country</p>
+                        <p class="SettingTextSmall">The selected country determines the currency of your refferal code</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <button class="PillElement LangButton p-0 text-center m-0 ml-auto" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="IconText m-0">Latvia</p>
+                        </button>
+                        <div class="LangDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
+                            <div class="text-center">
+                                <div class="Triangle text-center"></div>
+                            </div>
+                            <a class="DropdownButton text-center" href="#">Latvia</a>
+                            <a class="DropdownButton text-center" href="#">Lithuania</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Language</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <button class="PillElement LangButton p-0 text-center m-0 ml-auto" type="button" id="LangDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="IconText m-0">English</p>
+                        </button>
+                        <div class="LangDropdown mt-2 py-0 dropdown-menu my-4" aria-labelledby="LangDropdownButton">
+                            <div class="text-center">
+                                <div class="Triangle text-center"></div>
+                            </div>
+                            <a class="DropdownButton text-center" href="#">Latvian</a>
+                            <a class="DropdownButton text-center" href="#">Lithuanian</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Mobile number</p>
+                        <p class="SettingTextSmall">+371 25453359</p>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Name</p>
+                        <p class="SettingTextSmall">Kārlis Maskats</p>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Send receipts to email</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <label class="GreenToggleLabel ml-auto">
+                            <input type="checkbox" checked>
+                            <span class="GreenToggleSlider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Clear auto-translation settings</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <button type="button" class="PillElement SettingResetButton">Reset</button>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">I want to receive special offers and promotions from Wolt via emails and push-messages</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <label class="GreenToggleLabel ml-auto">
+                            <input type="checkbox" checked>
+                            <span class="GreenToggleSlider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Send receipts to email</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <label class="GreenToggleLabel ml-auto">
+                            <input type="checkbox" checked>
+                            <span class="GreenToggleSlider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
+                <div class="SettingBlock w-100 my-3 d-flex">
+                    <div class="SettingTextBox pr-3">
+                        <p class="SettingTextLarge">Log out of Mysiit</p>
+                    </div>
+                    <div class="SettingOptionBox d-flex align-items-center">
+                        <button type="button" class="PillElement ml-auto SettingLogoutButton">Log out</button>
+                    </div>
+                </div>
+
+                <div class="DividerLine"></div>
+
             </div>
         </div>
 
