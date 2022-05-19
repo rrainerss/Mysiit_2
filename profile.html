@@ -62,7 +62,31 @@
                                 <span class="row h-100 w-auto py-2">
                                     <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
                                         <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
-                                        <input class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto" type="text" placeholder="Location" aria-label="Search">
+                                        <input data-dropdown-id="0" class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto LocationSearchWithDropdown" type="text" placeholder="Location" aria-label="Search">
+                                        <div data-dropdown-id="0" class="LocationSearchResultBox LocationSearchFilters pt-3 mx-1 text-md-left">
+                                            <div class="FilterDividerLine d-flex d-md-none"></div>
+                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
+                                                <p class="mt-2 mb-0 w-100"><b>Kro Kebabnica</b></p>
+                                                <p class="my-2 w-100">Valdemara street 123</p>
+                                            </button>
+                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
+                                                <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
+                                                <p class="my-2 w-100">Valdemara street 87</p>
+                                            </button>
+                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
+                                                <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
+                                                <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
+                                            </button>
+                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
+                                                <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
+                                                <p class="my-2 w-100">Valdemara street 87</p>
+                                            </button>
+                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
+                                                <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
+                                                <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
+                                            </button>
+                                            <div class="FilterDividerLine d-flex d-md-none"></div>
+                                        </div>
                                     </div>
                                     <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
                                         <div class="Incrementor PillElement SearchEl3 text-center mx-auto pr-4 pr-sm-3 pr-md-5 pr-lg-3">
@@ -79,44 +103,45 @@
                     
                     <div class="my-0">
                         <p class="FilterHeader mb-4 w-100 text-md-left">Type of place</p>
-                        <ul class="FilterCheckboxContainer FilterUl">
-                            <li><input type="checkbox" class="checkbox" id="checkboxOne" value=""><label for="checkboxOne">Sushi</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxTwo" value=""><label for="checkboxTwo">Soup</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxThree" value=""><label for="checkboxThree">Indian</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxFour" value=""><label for="checkboxFour">Salad</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxFive" value=""><label for="checkboxFive">Kebab</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxSix" value=""><label for="checkboxSix">Pizza</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxseven" value=""><label for="checkboxseven">Sweet</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxeight" value=""><label for="checkboxeight">Chinese</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxnine" value=""><label for="checkboxnine">Alcoholic coctail</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxten" value=""><label for="checkboxten">wrap</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxeleven" value=""><label for="checkboxeleven">Vegan</label></li>
-                        </ul>
+                        <div class="FilterCheckboxes mb-3">
+                            <input type="checkbox" id="FilterCheckbox1" name="fruit"/><label for="FilterCheckbox1"><div class="FilterGreenToggle mr-1 py-1 px-3">Sushi</div></label>
+                            <input type="checkbox" id="FilterCheckbox2" name="fruit"/><label for="FilterCheckbox2"><div class="FilterGreenToggle mr-1 py-1 px-3">Soup</div></label>
+                            <input type="checkbox" id="FilterCheckbox3" name="fruit"/><label for="FilterCheckbox3"><div class="FilterGreenToggle mr-1 py-1 px-3">Indian</div></label>
+                            <input type="checkbox" id="FilterCheckbox4" name="fruit"/><label for="FilterCheckbox4"><div class="FilterGreenToggle mr-1 py-1 px-3">Salad</div></label>
+                            <input type="checkbox" id="FilterCheckbox5" name="fruit"/><label for="FilterCheckbox5"><div class="FilterGreenToggle mr-1 py-1 px-3">Kebab</div></label>
+                            <input type="checkbox" id="FilterCheckbox6" name="fruit"/><label for="FilterCheckbox6"><div class="FilterGreenToggle mr-1 py-1 px-3">Pizza</div></label>
+                            <input type="checkbox" id="FilterCheckbox7" name="fruit"/><label for="FilterCheckbox7"><div class="FilterGreenToggle mr-1 py-1 px-3">Sushi</div></label>
+                            <input type="checkbox" id="FilterCheckbox8" name="fruit"/><label for="FilterCheckbox8"><div class="FilterGreenToggle mr-1 py-1 px-3">Sweet</div></label>
+                            <input type="checkbox" id="FilterCheckbox9" name="fruit"/><label for="FilterCheckbox9"><div class="FilterGreenToggle mr-1 py-1 px-3">Chinese</div></label>
+                            <input type="checkbox" id="FilterCheckbox10" name="fruit"/><label for="FilterCheckbox10"><div class="FilterGreenToggle mr-1 py-1 px-3">Alcoholic coctail</div></label>
+                            <input type="checkbox" id="FilterCheckbox11" name="fruit"/><label for="FilterCheckbox11"><div class="FilterGreenToggle mr-1 py-1 px-3">Wrap</div></label>
+                            <input type="checkbox" id="FilterCheckbox12" name="fruit"/><label for="FilterCheckbox12"><div class="FilterGreenToggle mr-1 py-1 px-3">Vegan</div></label>
+                        </div>
                     </div>
                     <div class="FilterDividerLine"></div>
                     <div class="mt-4">
-                        <p class="FilterHeader mb-4 w-100 text-md-left">Price of range</p>
-                        <ul class="FilterCheckboxContainer FilterUl">
-                            <li><input type="checkbox" class="checkbox" id="checkboxTW" value=""><label for="checkboxTW">10 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxTH" value=""><label for="checkboxTH">20 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxFR" value=""><label for="checkboxFR">50 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxFI" value=""><label for="checkboxFI">80 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxSI" value=""><label for="checkboxSI">100 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxSE" value=""><label for="checkboxSE">150 €</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxET" value=""><label for="checkboxET">more €</label></li>
-                        </ul>
+                        <p class="FilterHeader mb-4 w-100 text-md-left">Price range</p>
+                        <div class="FilterCheckboxes mb-3">
+                            <input type="checkbox" id="FilterCheckbox13" name="fruit"/><label for="FilterCheckbox13"><div class="FilterGreenToggle mr-1 py-1 px-3">10 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox14" name="fruit"/><label for="FilterCheckbox14"><div class="FilterGreenToggle mr-1 py-1 px-3">20 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox15" name="fruit"/><label for="FilterCheckbox15"><div class="FilterGreenToggle mr-1 py-1 px-3">50 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox16" name="fruit"/><label for="FilterCheckbox16"><div class="FilterGreenToggle mr-1 py-1 px-3">80 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox17" name="fruit"/><label for="FilterCheckbox17"><div class="FilterGreenToggle mr-1 py-1 px-3">100 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox18" name="fruit"/><label for="FilterCheckbox18"><div class="FilterGreenToggle mr-1 py-1 px-3">150 €</div></label>
+                            <input type="checkbox" id="FilterCheckbox19" name="fruit"/><label for="FilterCheckbox19"><div class="FilterGreenToggle mr-1 py-1 px-3">More</div></label>
+                        </div>
                     </div>
                     <div class="FilterDividerLine"></div>
-                    <div class="mt-4">
+                    <div class="mt-4 mb-5 pb-5 mb-md-0 pb-md-0">
                         <p class="FilterHeader mb-4 w-100 text-md-left">Facilities</p>
-                        <ul class="FilterCheckboxContainer FilterUl">
-                            <li><input type="checkbox" class="checkbox" id="checkboxZR" value=""><label for="checkboxZR">TV</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxZC" value=""><label for="checkboxZC">Pool</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxZQ" value=""><label for="checkboxZQ">Wifi</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxZA" value=""><label for="checkboxZA">Free parking</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxZD" value=""><label for="checkboxZD">Childrens corner</label></li>
-                            <li><input type="checkbox" class="checkbox" id="checkboxZG" value=""><label for="checkboxZG">Pook</label></li>
-                        </ul>
+                        <div class="FilterCheckboxes mb-3">
+                            <input type="checkbox" id="FilterCheckbox20" name="fruit"/><label for="FilterCheckbox20"><div class="FilterGreenToggle mr-1 py-1 px-3">TV</div></label>
+                            <input type="checkbox" id="FilterCheckbox21" name="fruit"/><label for="FilterCheckbox21"><div class="FilterGreenToggle mr-1 py-1 px-3">Pool</div></label>
+                            <input type="checkbox" id="FilterCheckbox22" name="fruit"/><label for="FilterCheckbox22"><div class="FilterGreenToggle mr-1 py-1 px-3">Wifi</div></label>
+                            <input type="checkbox" id="FilterCheckbox23" name="fruit"/><label for="FilterCheckbox23"><div class="FilterGreenToggle mr-1 py-1 px-3">Free parking</div></label>
+                            <input type="checkbox" id="FilterCheckbox24" name="fruit"/><label for="FilterCheckbox24"><div class="FilterGreenToggle mr-1 py-1 px-3">Childrens corner</div></label>
+                            <input type="checkbox" id="FilterCheckbox25" name="fruit"/><label for="FilterCheckbox25"><div class="FilterGreenToggle mr-1 py-1 px-3">Park</div></label>
+                        </div>
                     </div>
                 </div>
                 <div class="FilterDividerLine"></div>

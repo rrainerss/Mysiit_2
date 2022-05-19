@@ -1543,81 +1543,23 @@
 /*#endregion*/
 
 /*#region OVERLAY Filter overlay checkboxes*/
-    .FilterCheckboxContainer
-    {
-        width: auto;
-        display: inline-flex;
-        flex-wrap: wrap;
-        list-style: none;
-    }
-    .FilterCheckboxContainer li
-    {
-        display: inline;
-    }
-    .FilterCheckbox
-    {
-        margin-top: 0.1rem;
-    }
-    .FilterSmallText
-    {
-        font-weight: 500;
-    }
-    .FilterCheckboxContainer li label
+    .FilterGreenToggle
     {
         display: inline-block;
+        cursor: pointer;
+        border-radius: 2rem;
         border: 1px solid var(--bordergray);
         color: var(--normalgray);
-        border-radius: 2rem;
-        white-space: nowrap;
-        margin-right: 0.75rem;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        transition: all 150ms;
-        padding-right: 1.8rem !important; 
     }
-    .FilterCheckboxContainer li label
+    .FilterCheckboxes input
     {
-        padding: 0.3rem 0rem;
-        cursor: pointer;
+        display: none
     }
-    .FilterCheckboxContainer li label::before
+    .FilterCheckboxes input:checked + label > .FilterGreenToggle
     {
-        display: inline-block;
-        padding-left: 1rem;
-        content: "\f067";
-        transition: 150ms all;
-        opacity: 0;
-        border: none;
-        visibility: hidden;
-    }
-    .FilterCheckboxContainer li input[type="checkbox"]:checked + label::before
-    {
-        content: "\f00c";
-        transform: rotate(-360deg);
-        transition: 150ms all;
-        opacity: 0;
-        border: none;
-        visibility: hidden;
-    }
-    .FilterCheckboxContainer li input[type="checkbox"]:checked + label
-    {
-        border: 1px solid transparent;
         background-color: var(--green);
+        border: 1px solid var(--green);
         color: white;
         transition: 150ms all;
-    }
-    .FilterCheckboxContainer li input[type="checkbox"]
-    {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .FilterUl
-    {
-        padding-inline-start: 0px !important;
     }
 /*#endregion*/
