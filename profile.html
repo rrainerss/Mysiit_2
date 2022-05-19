@@ -166,32 +166,582 @@
     <div class="w-100">
         <div class="d-md-flex flex-wrap justify-content-center mx-auto w-md-100">
             <div class="SelectionContainer d-flex flex-wrap justify-content-between MaxWidth px-md-4">
-                <a class="SelectionLink SelectionLinkClicked px-md-0 my-3" href="#">Personal info</a>
+                <a href="javascript:ShowProfileContainer(0);" class="SelectionLink SelectionLinkClicked px-md-0 my-3" href="#">Personal info</a>
                 <span class="MobileDividerLine"></span>
-                <a class="SelectionLink px-md-0 my-3" href="#">Reservation history</a>
+                <a href="javascript:ShowProfileContainer(1);" class="SelectionLink px-md-0 my-3" href="#">Reservation history</a>
                 <span class="MobileDividerLine"></span>
-                <a class="SelectionLink px-md-0 my-3" href="#">Favourite restaurants</a>
+                <a href="javascript:ShowProfileContainer(2);" class="SelectionLink px-md-0 my-3" href="#">
+                    <img class="mr-1 SelectionLinkHeart" src="icons/heart.png" width="16" height="16" alt="">
+                    Favourite restaurants
+                </a>
                 <span class="MobileDividerLine"></span>
-                <a class="SelectionLink  px-md-0 my-3" href="#">Settings</a>
+                <a href="javascript:ShowProfileContainer(3);" class="SelectionLink  px-md-0 my-3" href="#">Settings</a>
                 <span class="MobileDividerLine"></span>
             </div> 
         </div>
     
-        <!-- First selection -->
-        <div class="d-md-flex flex-wrap justify-content-center mx-auto w-md-100">
-            <div id="SelectedContainer1" class="SelectionContainer mx-auto my-5 MaxWidth px-md-4">
-                <div class="UserContainer">
-
+        <!-- 0th selection -->
+        <div id="SelectedContainer0" class="flex-wrap justify-content-center mx-auto w-100">
+            <div class="SelectionContainer mx-auto my-5 MaxWidth px-md-4">
+                <div class="UserContainer d-flex">
+                    <div class="ProfileImageBox d-flex justify-content-center align-items-center">
+                        <p class="m-0">KM</p>
+                    </div>
+                    <div class="UserTextBox p-3 h-100">
+                        <p class="mb-4"><b>Kārlis Maskats</b></p>
+                        <p class="UserTextSmall mb-0"><b>Mail:</b></p>
+                        <p class="UserTextSmall mb-0">karlis@blank.lv</p>
+                        <p class="UserTextSmall mb-0"><b>Phone number:</b></p>
+                        <p class="UserTextSmall mb-0">+371 25453359</p>
+                    </div>
+                    <div class="ml-auto mt-auto">
+                        <button type="button" class="PillElement EditButton m-3 d-none d-sm-block">Edit</button>
+                    </div>
                 </div>
-            </div>            
-        </div>
-
-        <!-- Second selection -->
-        <div class="d-md-flex flex-wrap justify-content-center mx-auto w-md-100">
-            <div id="SelectedContainer2" class="SelectionContainer mx-auto MaxWidth px-md-0">
-
+                <div class="EditText pt-2">
+                    <a href="" >Edit</a>
+                </div>
+            </div>     
+            <div class="FavouriteSmall w-100 d-flex flex-wrap justify-content-center">
+                <div class="w-100 my-3 d-flex flex-wrap justify-content-center">
+                    <img class="mr-2 my-4" src="icons/heart_red.png" width="20" height="20" alt="">
+                    <p class="my-3 FavouriteHeader">Favourite restaurants</p>
+                </div>
+                <div class="MaxWidth d-inline-flex flex-wrap CardRow">
+                    <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                        <div class="CardHalfContainer h-100">
+                            <div class="CardImageHalf">
+                                <div class="row w-100 h-100 m-0">
+                                    <a class="ClickableImage" href="restaurant.html">
+                                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                                    </a>
+                                    <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                        <img class="" src="icons/heart_red.png" width="16" height="16">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="CardTextHalf m-0 p-0">
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                </div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                    <div class="d-flex align-items-center">
+                                        <p class="my-3 ColorText2 mr-1">Open</p>
+                                        <div class="CardYDivider mx-2"></div>
+                                        <button class="HeartButton d-none d-md-block" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                        <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                        </div>
+                                        <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                        <p class="my-3 mr-1 mb-0">8,2</p>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                    </div>
+                                    <div class="CardReserveButtonContainer text-center text-sm-right">
+                                        <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                        <div class="CardHalfContainer h-100">
+                            <div class="CardImageHalf">
+                                <div class="row w-100 h-100 m-0">
+                                    <a class="ClickableImage" href="restaurant.html">
+                                        <img class="col p-0 w-100 img-fluid" src="images/restorans_3.png" alt="">
+                                    </a>
+                                    <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                        <img class="" src="icons/heart_red.png" width="16" height="16">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="CardTextHalf m-0 p-0">
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                </div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                    <div class="d-flex align-items-center">
+                                        <p class="my-3 ColorText2 mr-1">Open</p>
+                                        <div class="CardYDivider mx-2"></div>
+                                        <button class="HeartButton d-none d-md-block" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                        <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                        </div>
+                                        <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                        <p class="my-3 mr-1 mb-0">8,2</p>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                    </div>
+                                    <div class="CardReserveButtonContainer text-center text-sm-right">
+                                        <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                        <div class="CardHalfContainer h-100">
+                            <div class="CardImageHalf">
+                                <div class="row w-100 h-100 m-0">
+                                    <a class="ClickableImage" href="restaurant.html">
+                                        <img class="col p-0 w-100 img-fluid" src="images/restorans_5.png" alt="">
+                                    </a>
+                                    <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                        <img class="" src="icons/heart_red.png" width="16" height="16">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="CardTextHalf m-0 p-0">
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                    <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                </div>
+                                <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                    <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                </div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                    <div class="d-flex align-items-center">
+                                        <p class="my-3 ColorText2 mr-1">Open</p>
+                                        <div class="CardYDivider mx-2"></div>
+                                        <button class="HeartButton d-none d-md-block" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                        <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                            <p class="mb-0 LightGrayText">€</p>
+                                        </div>
+                                        <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                        <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                        <p class="my-3 mr-1 mb-0">8,2</p>
+                                        <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                    </div>
+                                    <div class="CardReserveButtonContainer text-center text-sm-right">
+                                        <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- 1st selection -->
+        <div id="SelectedContainer1" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
+            <div class="mx-auto MaxWidth px-md-0 w-100">
+                <div class="FavouriteLarge w-100 d-flex flex-wrap justify-content-center">
+                    <div class="MaxWidth d-inline-flex flex-wrap CardRow my-5">
+
+                        <div class="HistoryCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer m-0 p-0 row w-100 h-100">
+                                <div class="d-flex w-100 flex-wrap">
+                                    <a class="HistoryClickableImage" href="restaurant.html">
+                                        <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                                    </a>
+                                    <div class="HistoryCardTextBox p-3 h-sm-100">
+                                        <p class="mb-0"><b>Riga Sushi</b></p>
+                                        <p class="GrayText SmallCardText mb-3"><b>Valmieras iela 12, Rīga</b></p>
+                                        <p class="UserTextSmall mb-0"><b>Rezervācijas datums:</b></p>
+                                        <p class="GrayText UserTextSmall mb-0">12.07.2022</p>
+                                        <p class="UserTextSmall mb-0"><b>Personu skaits:</b></p>
+                                        <p class="GrayText UserTextSmall mb-0">3</p>
+                                    </div>
+                                    <div class="ml-3 mr-auto mr-sm-0 h-sm-100 ml-sm-auto d-flex flex-wrap align-items-start flex-column">
+                                        <div class="w-100 mb-auto d-none d-sm-flex justify-content-end">
+                                            <button class="HeartButton m-3" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                        </div>
+                                        <button type="button" class="PillElement CardHistoryReserveButton mb-3 mr-sm-3">Reserve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="HistoryCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer m-0 p-0 row w-100 h-100">
+                                <div class="d-flex w-100 flex-wrap">
+                                    <a class="HistoryClickableImage" href="restaurant.html">
+                                        <img class="col p-0 w-100 img-fluid" src="images/restorans_6.png" alt="">
+                                    </a>
+                                    <div class="HistoryCardTextBox p-3 h-sm-100">
+                                        <p class="mb-0"><b>Sushi Obic</b></p>
+                                        <p class="GrayText SmallCardText mb-3"><b>Valmieras iela 12, Rīga</b></p>
+                                        <p class="UserTextSmall mb-0"><b>Rezervācijas datums:</b></p>
+                                        <p class="GrayText UserTextSmall mb-0">12.07.2022</p>
+                                        <p class="UserTextSmall mb-0"><b>Personu skaits:</b></p>
+                                        <p class="GrayText UserTextSmall mb-0">3</p>
+                                    </div>
+                                    <div class="ml-3 mr-auto mr-sm-0 h-sm-100 ml-sm-auto d-flex flex-wrap align-items-start flex-column">
+                                        <div class="w-100 mb-auto d-none d-sm-flex justify-content-end">
+                                            <button class="HeartButton m-3" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                        </div>
+                                        <button type="button" class="PillElement CardHistoryReserveButton mb-3 mr-sm-3">Reserve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2nd selection -->
+        <div id="SelectedContainer2" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
+            <div class="mx-auto MaxWidth px-md-0 w-100">
+                <div class="FavouriteLarge w-100 d-flex flex-wrap justify-content-center">
+                    <div class="MaxWidth d-inline-flex flex-wrap CardRow my-5">
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_1.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_2.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_3.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_4.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_5.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CardBox MediumCard container-fluid p-0 h-auto mb-4 m-0 mx-auto">
+                            <div class="CardHalfContainer h-100">
+                                <div class="CardImageHalf">
+                                    <div class="row w-100 h-100 m-0">
+                                        <a class="ClickableImage" href="restaurant.html">
+                                            <img class="col p-0 w-100 img-fluid" src="images/restorans_6.png" alt="">
+                                        </a>
+                                        <button class="HeartButton FloatingHeartButton d-block d-md-none" value="1">
+                                            <img class="" src="icons/heart_red.png" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="CardTextHalf m-0 p-0">
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow d-flex justify-content-between">
+                                        <p class="p-0 m-0 my-2 SmallCardText LightGrayText">Kebab</p>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <h6 class="col p-0 my-0"><b>Kro kebabnica</b></h6>
+                                    </div>
+                                    <div class="row m-0 mx-2 mx-sm-4 mx-md-2 PaddedRow">
+                                        <p class="col p-0 mb-2 SmallCardText GrayText">Valdemara street 87</p>
+                                    </div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 mt-2 CardXDivider"></div>
+                                    <div class="row mx-2 mx-sm-4 mx-md-2 SmallerCardText d-flex justify-content-center justify-content-sm-between">
+                                        <div class="d-flex align-items-center">
+                                            <p class="my-3 ColorText2 mr-1">Open</p>
+                                            <div class="CardYDivider mx-2"></div>
+                                            <button class="HeartButton d-none d-md-block" value="1">
+                                                <img class="" src="icons/heart_red.png" width="16" height="16">
+                                            </button>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>
+                                            <div class="my-3 mx-1 d-inline-flex d-md-none d-lg-inline-flex align-items-center">
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                                <p class="mb-0 LightGrayText">€</p>
+                                            </div>
+                                            <div class="CardYDivider d-md-none d-lg-block mx-2"></div>
+                                            <img class="my-3 mx-1" src="icons/smile.png" width="10" height="10">
+                                            <p class="my-3 mr-1 mb-0">8,2</p>
+                                            <div class="CardYDivider mx-2 d-none d-md-block"></div>                                
+                                        </div>
+                                        <div class="CardReserveButtonContainer text-center text-sm-right">
+                                            <button onclick="OpenNavMenu('CalendarOverlay')" class="my-2 CardReserveButton ml-auto" type="button">Reserve</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd selection -->
+        <div id="SelectedContainer3" class="HiddenByDefault flex-wrap justify-content-center mx-auto w-md-100">
+            <div class="SelectionContainer mx-auto MaxWidth px-md-0">
+                <p>CCCCCCCCCCCCCCCCCCCCCCCCCC</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- Download to phone section -->

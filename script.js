@@ -325,3 +325,40 @@ function LocationSearchPopup()
 }
 LocationSearchPopup();
 ///////////
+
+//Container selector in profile
+    window.onload = (event) =>
+    {
+        document.querySelectorAll(".HiddenByDefault").forEach(function(element)
+        {
+            element.style.display = 'none';
+        });
+    };   
+
+    function ShowProfileContainer(id)
+    {
+        if(id == 2)
+        {
+            document.querySelectorAll(".SelectionLinkHeart")[0].src="icons/heart_red.png";
+        }
+        else
+        {
+            document.querySelectorAll(".SelectionLinkHeart")[0].src="icons/heart.png";
+        }
+        
+        document.querySelectorAll(".SelectionLink").forEach(function(element)
+        {
+            element.classList.remove("SelectionLinkClicked");
+        });
+        document.querySelectorAll(".SelectionLink")[id].classList.add("SelectionLinkClicked");
+
+        document.querySelectorAll("div[id^='SelectedContainer']").forEach(function(element)
+        {
+            element.style.display = 'none';
+        });
+        document.querySelectorAll("#SelectedContainer" + id).forEach(function(element)
+        {
+            element.style.display = 'flex';
+        });
+    }
+///////////
