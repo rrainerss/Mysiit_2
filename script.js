@@ -258,12 +258,12 @@ $('.swiper-links').each(function (index, element)
 
 //Category selector in restaurant view
 //FoodMenuDiv, OffersDiv
+
     if(document.querySelectorAll("div[value=DynamicDiv]")[1])
     {
-        window.onload = (event) =>
-        {
+        $(document).ready(function() {
             document.querySelectorAll("div[value=DynamicDiv]")[1].style.display = 'none';
-        };        
+        });   
     }
 
     function ShowRestaurantMenu(DivClass, ButtonClass)

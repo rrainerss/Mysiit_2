@@ -181,6 +181,14 @@
             {
                 margin-left: 5.75rem;
             }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 0.75rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: 0.75rem;
+            }
         }
     /*SM*/
         @media only screen and (min-width: 576px) and (max-width: 767px)
@@ -212,6 +220,14 @@
             .Triangle
             {
                 margin-left: 5.75rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 0.75rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: 0.75rem;
             }
         }
     /*MD*/
@@ -245,6 +261,14 @@
             {
                 margin-left: 5.75rem;
             }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 1rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: 1rem;
+            }
         }
     /*LG*/
         @media only screen and (min-width: 992px) and (max-width: 1199px)
@@ -277,6 +301,18 @@
             {
                 margin-left: 5.75rem;
             }
+            .SwiperCalcWidth
+            {
+                width: calc(100vw - 31rem);
+            }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 1.5rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: -0.5rem;
+            }
         }
     /*XL*/
         @media only screen and (min-width: 1200px)
@@ -308,6 +344,33 @@
             .Triangle
             {
                 margin-left: 2.9rem;
+            }
+            .SwiperCalcWidth
+            {
+                width: calc(100vw - 31.5rem);
+            }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 2rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: -0.5rem;
+            }
+        }
+        @media only screen and (min-width: 2560px)
+        {
+            .SwiperCalcWidth
+            {
+                width: calc(100vw - 32rem);
+            }
+            .RestaurantSwiperWrapper .CardBox:first-child
+            {
+                margin-left: 2rem;
+            }
+            .RestaurantSwiperWrapper .CardBox:last-child
+            {
+                margin-right: -0.5rem;
             }
         }
 /*#endregion*/
@@ -595,7 +658,6 @@
         margin-top: 0.5rem;
         border: 1px solid transparent;
         border-radius: 1.5rem;
-        position: absolute;
         background-color:#41198F;
     }
     @media only screen and (min-width: 0px) and (max-width: 1199px)
