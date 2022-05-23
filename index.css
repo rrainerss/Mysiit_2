@@ -1522,6 +1522,13 @@
         font-weight: 700;
         color: var(--black);
     }
+    @media only screen and (min-width: 768px)
+    {
+        .FilterSection .FloatingSearch
+        {
+            min-height: 4rem !important;
+        }
+    }
     .FilterDividerLine
     {
         border-bottom: 1px solid var(--lightgray);

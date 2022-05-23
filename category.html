@@ -75,56 +75,56 @@
         <div class="FilterOverlayBox mb-5 pb-5 pb-md-0">
             <form id="FilterForm" class="FilterMain mb-2 mb-md-5">
                 <div class="MaxWidth px-xl-5 pt-3">
-                    <div class="my-4">
+                    <div class="my-3">
                         <div class="w-100 text-right">
                             <button type="button" onclick="CloseNavMenu('FilterSection')" class="CloseOverlay CloseMobileSearch">&times;</button>
                         </div>
-                        <p class="FilterHeader w-100 d-md-none text-left">Search</p>
-                        <section class="SearchSection HiddenSearchSection d-flex d-md-none justify-content-center">
+                        <p class="FilterHeader w-100 mb-0 text-left">Search</p>
+                        <section class="SearchSection HiddenSearchSection d-flex justify-content-center">
                             <span class="FloatingSearch container-fluid">
-                                <span class="row h-100 w-auto py-2">
-                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                                <span class="row h-100 w-auto mt-2 mt-md-0">
+                                    <div class="order-1 order-md-1 col-12 col-lg-6 d-flex flex-wrap my-auto mt-md-0 mb-md-auto mx-auto px-0 py-2">
                                         <input class="PillElement SearchEl1 text-center pl-5 pr-3 mx-auto" type="text" placeholder="Find by restaurant name" aria-label="Search">
                                         <input data-dropdown-id="0" class="PillElement SearchEl2 text-center pl-5 pr-4 mt-3 mt-sm-0 mx-auto LocationSearchWithDropdown" type="text" placeholder="Location" aria-label="Search">
-                                        <div data-dropdown-id="0" class="LocationSearchResultBox LocationSearchFilters pt-3 mx-1 text-md-left">
-                                            <div class="FilterDividerLine d-flex d-md-none"></div>
-                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
-                                                <p class="mt-2 mb-0 w-100"><b>Kro Kebabnica</b></p>
-                                                <p class="my-2 w-100">Valdemara street 123</p>
-                                            </button>
-                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
-                                                <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
-                                                <p class="my-2 w-100">Valdemara street 87</p>
-                                            </button>
-                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
-                                                <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
-                                                <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
-                                            </button>
-                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
-                                                <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
-                                                <p class="my-2 w-100">Valdemara street 87</p>
-                                            </button>
-                                            <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap d-md-none" onclick="location.href='results.html'" type="button">
-                                                <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
-                                                <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
-                                            </button>
-                                            <div class="FilterDividerLine d-flex d-md-none"></div>
-                                        </div>
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-wrap my-auto mx-auto px-0 py-2">
+                                    <div data-dropdown-id="0" class="order-2 order-md-3 LocationSearchResultBox LocationSearchFilters pt-3 mx-1 text-md-left">
+                                        <div class="FilterDividerLine"></div>
+                                        <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap" onclick="location.href='results.html'" type="button">
+                                            <p class="mt-2 mb-0 w-100"><b>Kro Kebabnica</b></p>
+                                            <p class="my-2 w-100">Valdemara street 123</p>
+                                        </button>
+                                        <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap" onclick="location.href='results.html'" type="button">
+                                            <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
+                                            <p class="my-2 w-100">Valdemara street 87</p>
+                                        </button>
+                                        <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap" onclick="location.href='results.html'" type="button">
+                                            <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
+                                            <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
+                                        </button>
+                                        <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap" onclick="location.href='results.html'" type="button">
+                                            <p class="mt-2 mb-0 w-100"><b>Sushi obic</b></p>
+                                            <p class="my-2 w-100">Valdemara street 87</p>
+                                        </button>
+                                        <button class="FilterDividerLine LocationSearchResult w-100 text-left d-flex flex-wrap" onclick="location.href='results.html'" type="button">
+                                            <p class="mt-2 mb-0 w-100"><b>Vapiano</b></p>
+                                            <p class="my-2 w-100">Greg Turegatan 10, Stockholm</p>
+                                        </button>
+                                        <div class="FilterDividerLine d-md-none"></div>
+                                    </div>
+                                    <div class="order-3 order-md-2 col-12 col-lg-6 d-flex flex-wrap my-auto mt-md-0 mb-md-auto mx-auto px-0 py-2">
                                         <div class="Incrementor PillElement SearchEl3 text-center mx-auto pr-4 pr-sm-3 pr-md-5 pr-lg-3">
                                             <button type="button" class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(0)" value="Decrease Value">-</button>
                                             <input title="NumberInput" class="IncNumber" type="text" readonly value="1" max="8" min="1">
                                             <button type="button" class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(0)" value="Increase Value">+</button>
                                         </div>
-                                        <input class="PillElement SearchEl4 text-center pl-5 pr-4 pr-lg-0 pl-lg-4 mt-3 mt-sm-0 mx-auto" type="date" aria-label="Search">
+                                        <input class="PillElement SearchEl4 text-center pl-5 pr-4 pr-lg-0 pl-lg-4 mt-3 mt-sm-0 mx-auto" type="date" aria-label="Search">                                        
                                     </div>
                                 </span>
                             </span>
                         </section>
                     </div>
-                    
-                    <div class="my-0">
+                    <div class="FilterDividerLine"></div>
+                    <div class="mt-4">
                         <p class="FilterHeader mb-4 w-100 text-md-left">Type of place</p>
                         <div class="FilterCheckboxes mb-3">
                             <input type="checkbox" id="FilterCheckbox1" name="fruit"/><label for="FilterCheckbox1"><div class="FilterGreenToggle mr-1 py-1 px-3">Sushi</div></label>
