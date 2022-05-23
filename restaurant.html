@@ -562,7 +562,7 @@
                 <div class="InnerBox mx-auto px-3">
                     <div class="row">
                         <div class="col-12">
-                            <div class="d-flex justify-content-between py-2 mt-3">
+                            <div class="d-flex justify-content-between py-0 mt-3">
                                 <button class="CardNavButton text-center">&lt</button>
                                 <p class="mb-0 mt-1 DarkGrayText"><b>April 2022</b></p>
                                 <button class="CardNavButton text-center">&gt</button>
@@ -581,72 +581,85 @@
                         <div class="col px-0"><b class="DarkGrayText">Fr</b></div>
                         <div class="col px-0"><b class="DarkGrayText">Sa</b></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0">1</div>
-                        <div class="col px-0">2</div>
+                    <div class="row mt-2 text-center">
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="DateButtonDiv col px-0"><button>1</button></div>
+                        <div class="DateButtonDiv col px-0"><button>2</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">3</div>
-                        <div class="col px-0">4</div>
-                        <div class="col px-0">5</div>
-                        <div class="col px-0">6</div>
-                        <div class="col px-0">7</div>
-                        <div class="col px-0">8</div>
-                        <div class="col px-0">9</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>3</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>4</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>5</button></div>
+                        <div class="DateButtonDiv col px-0"><button>6</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>7</button></div>
+                        <div class="DateButtonDiv col px-0"><button>8</button></div>
+                        <div class="DateButtonDiv col px-0"><button>9</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">10</div>
-                        <div class="col px-0">11</div>
-                        <div class="col px-0">12</div>
-                        <div class="col px-0">13</div>
-                        <div class="col px-0">14</div>
-                        <div class="col px-0">15</div>
-                        <div class="col px-0">16</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>10</button></div>
+                        <div class="DateButtonDiv col px-0"><button>11</button></div>
+                        <div class="DateButtonDiv col px-0"><button data-selected>12</button></div>
+                        <div class="DateButtonDiv col px-0"><button>13</button></div>
+                        <div class="DateButtonDiv col px-0"><button>14</button></div>
+                        <div class="DateButtonDiv col px-0"><button>15</button></div>
+                        <div class="DateButtonDiv col px-0"><button>16</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">17</div>
-                        <div class="col px-0">18</div>
-                        <div class="col px-0">19</div>
-                        <div class="col px-0">20</div>
-                        <div class="col px-0">21</div>
-                        <div class="col px-0">22</div>
-                        <div class="col px-0">23</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>17</button></div>
+                        <div class="DateButtonDiv col px-0"><button>18</button></div>
+                        <div class="DateButtonDiv col px-0"><button>19</button></div>
+                        <div class="DateButtonDiv col px-0"><button>20</button></div>
+                        <div class="DateButtonDiv col px-0"><button>21</button></div>
+                        <div class="DateButtonDiv col px-0"><button>22</button></div>
+                        <div class="DateButtonDiv col px-0"><button>23</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">24</div>
-                        <div class="col px-0">25</div>
-                        <div class="col px-0">26</div>
-                        <div class="col px-0">27</div>
-                        <div class="col px-0">28</div>
-                        <div class="col px-0">29</div>
-                        <div class="col px-0">30</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>24</button></div>
+                        <div class="DateButtonDiv col px-0"><button>25</button></div>
+                        <div class="DateButtonDiv col px-0"><button>26</button></div>
+                        <div class="DateButtonDiv col px-0"><button>27</button></div>
+                        <div class="DateButtonDiv col px-0"><button>28</button></div>
+                        <div class="DateButtonDiv col px-0"><button>29</button></div>
+                        <div class="DateButtonDiv col px-0"><button>30</button></div>
                     </div>
-                    <div class="CalendarLine my-3"></div>
-                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons">
-                        <div class="mx-auto my-2 px-1">
-                            <p class="mb-0 DarkGrayText"><b>Time</b></p>
-                            <div class="Incrementor DarkGrayText PillElement TimePill text-right pr-2">
-                                <button class="ValueButton text-center p-0 Decrease" onclick="SubTime()" value="Decrease Value">-</button>
-                                <input title="NumberInput" class="IncTime" type="text" readonly placeholder="12:30">
-                                <button class="ValueButton text-center p-0 Increase" onclick="AddTime()" value="Increase Value">+</button>
-                            </div>
-                        </div>
-                        <div class="mx-auto my-2 px-1">
-                            <p class="mb-0 DarkGrayText"><b>Guests</b></p>
+                    <div class="CalendarLine mt-2 mb-2"></div>
+                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons my-3">
+                        <div class="mx-auto my-0 px-1">
+                            <p class="mb-2 DarkGrayText text-center"><b>Choose guests</b></p>
                             <div class="Incrementor DarkGrayText PillElement GuestsPill text-right pr-3">
                                 <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(1)" value="Decrease Value">-</button>
-                                <input title="NumberInput" class="IncNumber" type="text" readonly value="2" max="8" min="1">
+                                <input title="NumberInput" class="IncNumber" type="text" readonly value="4" max="8" min="1">
                                 <button class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(1)" value="Increase Value">+</button>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-4 mx-4">
-                        <button type="submit" class="PillElement CheckInButton mb-4">Check-in</button>
+                    <div class="CalendarLine mt-2 mb-2"></div>
+                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between my-3">
+                        <div class="mx-auto my-0 container-fluid p-0">
+                            <p class="mb-2 DarkGrayText text-center"><b>Choose time</b></p>
+                            <div class="TimeToggleButtons d-flex row m-0 p-0">
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">12:00</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1" data-selected>12:30</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">14:30</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">20:30</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CalendarLine mt-1 mb-2"></div>
+                    <div class="d-flex justify-content-center mt-0 mt-sm-4 mx-4">
+                        <button type="submit" class="PillElement CheckInButton mb-2">Check-in</button>
                     </div>
                 </div>
             </div>
@@ -745,7 +758,7 @@
                 <div class="InnerBox mx-auto px-3">
                     <div class="row">
                         <div class="col-12">
-                            <div class="d-flex justify-content-between py-2 mt-3">
+                            <div class="d-flex justify-content-between py-0 mt-3">
                                 <button class="CardNavButton text-center">&lt</button>
                                 <p class="mb-0 mt-1 DarkGrayText"><b>April 2022</b></p>
                                 <button class="CardNavButton text-center">&gt</button>
@@ -764,72 +777,85 @@
                         <div class="col px-0"><b class="DarkGrayText">Fr</b></div>
                         <div class="col px-0"><b class="DarkGrayText">Sa</b></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0"></div>
-                        <div class="col px-0">1</div>
-                        <div class="col px-0">2</div>
+                    <div class="row mt-2 text-center">
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="EmptyDateButtonDiv col px-0"><button disabled></button></div>
+                        <div class="DateButtonDiv col px-0"><button>1</button></div>
+                        <div class="DateButtonDiv col px-0"><button>2</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">3</div>
-                        <div class="col px-0">4</div>
-                        <div class="col px-0">5</div>
-                        <div class="col px-0">6</div>
-                        <div class="col px-0">7</div>
-                        <div class="col px-0">8</div>
-                        <div class="col px-0">9</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>3</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>4</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>5</button></div>
+                        <div class="DateButtonDiv col px-0"><button>6</button></div>
+                        <div class="DateButtonDiv col px-0"><button disabled>7</button></div>
+                        <div class="DateButtonDiv col px-0"><button>8</button></div>
+                        <div class="DateButtonDiv col px-0"><button>9</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">10</div>
-                        <div class="col px-0">11</div>
-                        <div class="col px-0">12</div>
-                        <div class="col px-0">13</div>
-                        <div class="col px-0">14</div>
-                        <div class="col px-0">15</div>
-                        <div class="col px-0">16</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>10</button></div>
+                        <div class="DateButtonDiv col px-0"><button>11</button></div>
+                        <div class="DateButtonDiv col px-0"><button data-selected>12</button></div>
+                        <div class="DateButtonDiv col px-0"><button>13</button></div>
+                        <div class="DateButtonDiv col px-0"><button>14</button></div>
+                        <div class="DateButtonDiv col px-0"><button>15</button></div>
+                        <div class="DateButtonDiv col px-0"><button>16</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">17</div>
-                        <div class="col px-0">18</div>
-                        <div class="col px-0">19</div>
-                        <div class="col px-0">20</div>
-                        <div class="col px-0">21</div>
-                        <div class="col px-0">22</div>
-                        <div class="col px-0">23</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>17</button></div>
+                        <div class="DateButtonDiv col px-0"><button>18</button></div>
+                        <div class="DateButtonDiv col px-0"><button>19</button></div>
+                        <div class="DateButtonDiv col px-0"><button>20</button></div>
+                        <div class="DateButtonDiv col px-0"><button>21</button></div>
+                        <div class="DateButtonDiv col px-0"><button>22</button></div>
+                        <div class="DateButtonDiv col px-0"><button>23</button></div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col px-0">24</div>
-                        <div class="col px-0">25</div>
-                        <div class="col px-0">26</div>
-                        <div class="col px-0">27</div>
-                        <div class="col px-0">28</div>
-                        <div class="col px-0">29</div>
-                        <div class="col px-0">30</div>
+                    <div class="row mt-2 text-center">
+                        <div class="DateButtonDiv col px-0"><button>24</button></div>
+                        <div class="DateButtonDiv col px-0"><button>25</button></div>
+                        <div class="DateButtonDiv col px-0"><button>26</button></div>
+                        <div class="DateButtonDiv col px-0"><button>27</button></div>
+                        <div class="DateButtonDiv col px-0"><button>28</button></div>
+                        <div class="DateButtonDiv col px-0"><button>29</button></div>
+                        <div class="DateButtonDiv col px-0"><button>30</button></div>
                     </div>
-                    <div class="CalendarLine my-2 my-sm-3"></div>
-                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons">
-                        <div class="mx-auto my-2 px-1">
-                            <p class="mb-0 DarkGrayText"><b>Time</b></p>
-                            <div class="Incrementor DarkGrayText PillElement TimePill text-right pr-2">
-                                <button class="ValueButton text-center p-0 Decrease" onclick="SubTime(1)" value="Decrease Value">-</button>
-                                <input title="NumberInput" class="IncTime" type="text" readonly placeholder="12:30">
-                                <button class="ValueButton text-center p-0 Increase" onclick="AddTime(1)" value="Increase Value">+</button>
-                            </div>
-                        </div>
-                        <div class="mx-auto my-2 px-1">
-                            <p class="mb-0 DarkGrayText"><b>Guests</b></p>
+                    <div class="CalendarLine mt-2 mb-2"></div>
+                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between IncrementorButtons my-3">
+                        <div class="mx-auto my-0 px-1">
+                            <p class="mb-2 DarkGrayText text-center"><b>Choose guests</b></p>
                             <div class="Incrementor DarkGrayText PillElement GuestsPill text-right pr-3">
-                                <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(1)" value="Decrease Value">-</button>
-                                <input title="NumberInput" class="IncNumber" type="text" readonly value="2" max="8" min="1">
-                                <button class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(1)" value="Increase Value">+</button>
+                                <button class="ValueButton text-center p-0 Decrease" onclick="DecreaseValue(2)" value="Decrease Value">-</button>
+                                <input title="NumberInput" class="IncNumber" type="text" readonly value="4" max="8" min="1">
+                                <button class="ValueButton text-center p-0 Increase" onclick="IncreaseValue(2)" value="Increase Value">+</button>
                             </div>
                         </div>
                     </div>
+                    <div class="CalendarLine mt-2 mb-2"></div>
+                    <div class="d-flex flex-wrap text-center text-sm-left justify-content-between my-3">
+                        <div class="mx-auto my-0 container-fluid p-0">
+                            <p class="mb-2 DarkGrayText text-center"><b>Choose time</b></p>
+                            <div class="TimeToggleButtons d-flex row m-0 p-0">
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">12:00</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1" data-selected>12:30</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">14:30</button>
+                                </div>
+                                <div class="p-0 m-0 mb-2">
+                                    <button class="TimeToggle mb-1">20:30</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CalendarLine mt-1 mb-2"></div>
                     <div class="d-flex justify-content-center mt-0 mt-sm-4 mx-4">
-                        <button type="submit" class="PillElement CheckInButton mb-4">Check-in</button>
+                        <button type="submit" class="PillElement CheckInButton mt-3 mb-4">Check-in</button>
                     </div>
                 </div>
             </div>

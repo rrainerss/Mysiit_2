@@ -102,67 +102,6 @@ $('.swiper-links').each(function (index, element)
     }
 ///////////
 
-//+- time buttons
-    if(document.getElementsByClassName('IncTime')[0])
-    {
-        const InputTime = document.getElementsByClassName('IncTime')[0].placeholder;
-        const Increment = 15;
-        var Minutes = String(InputTime).slice(-2);
-        var Hours = '12';
-
-        function UpdateTime(id)
-        {
-            if(id)
-            {
-                document.getElementsByClassName('IncTime')[id].placeholder = Hours + ':' + Minutes;
-            }
-            else
-            {
-                document.getElementsByClassName('IncTime')[0].placeholder = Hours + ':' + Minutes;
-            }
-        }
-
-        function AddTime(id)
-        {
-            if (Minutes  < 45)
-            {
-                Minutes = Minutes * 1 + Increment;
-            }
-            else if (Minutes >= 45)
-            {
-                Minutes = 0;
-                Hours++;
-                if (Hours > 23)
-                {
-                    Minutes = 0;
-                    Hours = 0;
-                } 
-            }
-            UpdateTime(id);
-        }
-
-        function SubTime(id)
-        {
-            if (Minutes > 0)
-            {
-                Minutes = Minutes * 1 - Increment;
-            }
-            else if (Minutes  <= 0)
-            {
-                Minutes = 45;
-                Hours--;
-                if (Hours < 0)
-                {
-                    Hours = 23;
-                    Minutes = 45;
-                }
-            }
-            UpdateTime(id);
-        }        
-    }
-
-///////////
-
 //Overlays
     const { body, documentElement } = document;
     let { ScrollTop } = document.documentElement;
