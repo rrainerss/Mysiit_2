@@ -257,8 +257,13 @@
         margin-right: auto;
         display: flex;
     }
+    .CalendarSide .CalendarSuccessPopup, .NavOverlay .CalendarSuccessPopup
+    {
+        width: 26rem;
+    }
     .CloseCalendarOverlay
     {
+        z-index: 3;
         width: 26rem;
         position: absolute;
     }
@@ -270,6 +275,10 @@
             margin-top: 5vw;
             margin-bottom: calc(5vw + 3.3rem);
             margin-left: 5vw;
+        }
+        .CalendarSide .CalendarSuccessPopup, .NavOverlay .CalendarSuccessPopup
+        {
+            width: 90vw;
         }
         .CloseCalendarOverlay
         {
@@ -422,6 +431,22 @@
         color: white;
         border: 1px solid var(--purple);
         transition: 150ms all;
+    }
+    .CalendarSide .CalendarSuccessPopup, .NavOverlay .CalendarSuccessPopup
+    {
+        display: none;
+        background-color: var(--purple);
+        border-radius: 0.5rem;
+        z-index: 2;
+        position: absolute;
+    }
+    .CalendarSuccessPopup p
+    {
+        width: 16rem;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-align: center;
     }
 /*#endregion*/
 

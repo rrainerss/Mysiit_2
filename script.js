@@ -102,6 +102,14 @@ $('.swiper-links').each(function (index, element)
     }
 ///////////
 
+//Calendar success popup
+    $(".CheckInButton").click( function (){        
+        this.closest('.CalendarWrapper').querySelector(".CalendarSuccessPopup").style.display = 'flex';
+        height = this.closest('.CalendarWrapper').offsetHeight;
+        this.closest('.CalendarWrapper').querySelector(".CalendarSuccessPopup").style.height = height + 'px';
+    });
+///////////
+
 //Overlays
     const { body, documentElement } = document;
     let { ScrollTop } = document.documentElement;
@@ -197,7 +205,6 @@ $('.swiper-links').each(function (index, element)
 
 //Category selector in restaurant view
 //FoodMenuDiv, OffersDiv
-
     if(document.querySelectorAll("div[value=DynamicDiv]")[1])
     {
         $(document).ready(function() {
