@@ -49,7 +49,7 @@
                     </li>
                     <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
                     <li class="nav-item d-none d-md-flex">
-                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('LoginOverlay')" href="javascript:void(0)">Sign up</a>
+                        <a class="CustomNavLink my-auto" onclick="OpenNavMenu('RegisterOverlay')" href="javascript:void(0)">Sign up</a>
                     </li>
                     <div class="nav-item NavbarSpacer mx-3 d-none d-md-flex"></div>
                     <li class="nav-item dropdown d-flex">
@@ -191,7 +191,7 @@
                 <div class="w-100 row SmallLoginText m-0 mt-3">
                     <div class="GrayLoginText col-5 p-0 text-left">
                         <label class="CheckboxLabel mb-0">
-                            <input class="CustomCheckbox" type="checkbox" name="CustomCheckbox" id="CustomCheckbox">
+                            <input class="CustomCheckbox" type="checkbox" name="CustomCheckbox">
                             Remember Me
                         </label>
                     </div>
@@ -210,7 +210,69 @@
                     </div>
                 </div>
                 <div class="RegisterElement">
-                    <p class="GrayLoginText SmallLoginText">Don't have an account? <a href="">Register</a></p>
+                    <p class="GrayLoginText SmallLoginText">Don't have an account? <a href="javascript:CloseNavMenu('LoginOverlay');OpenNavMenu('RegisterOverlay');">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--Register popup overlay-->
+    <section class="PopupScrollbar NavOverlay RegisterOverlay" id="RegisterOverlay">
+        <div class="RegisterOverlayContainer d-flex">
+            <button onclick="CloseNavMenu('RegisterOverlay')" class="CloseOverlay CloseLoginOverlay m-4">&times;</button>
+            <form action="index.html" class="RegisterBox mx-auto my-auto text-center">
+                <h3 class="mb-0 px-5 my-5 pt-md-5">Register in Mysiit</h3>
+                <div class="GrayLoginText SmallLoginText d-flex p-0 text-left">
+                    <label class="CheckboxLabel mb-0 mr-4">
+                        <input class="CustomCheckbox RegisterCheckboxGroup" type="checkbox" name="CustomCheckbox">
+                        Male
+                    </label>
+                    <label class="CheckboxLabel mb-0">
+                        <input class="CustomCheckbox RegisterCheckboxGroup" type="checkbox" name="CustomCheckbox">
+                        Female
+                    </label>
+                </div>
+                <input class="LoginInput px-3 mt-4" type="text" placeholder="Name*">
+                <input class="LoginInput px-3 mt-4" type="text" placeholder="Surname*">
+                <div class="w-100 text-left SmallLoginText GrayLoginText m-0 mt-4 mb-2">
+                    <p class="mb-2">Date of birth*</p>
+                    <div class="w-100">
+                        <select class="text-center LoginInput YearSelect RegisterSelect">
+                            <option disabled selected value="">Year</option>
+                        </select>
+                        <select class="text-center LoginInput MonthSelect RegisterSelect">
+                            <option disabled selected value="">Month</option>
+                        </select>
+                        <select class="text-center LoginInput DaySelect RegisterSelect">
+                            <option disabled selected value="">Day</option>
+                        </select>
+                    </div>
+
+                </div>
+                <input class="LoginInput px-3 mt-4" type="email" placeholder="E-mail*">
+                <select class="px-3 mt-4 LoginInput RegisterSelect">
+                    <option disabled selected value="">Country*</option>
+                    <option value="">Latvia</option>
+                    <option value="">Lithuania</option>
+                    <option value="">Estonia</option>
+                    <option value="">Finland</option>
+                    <option value="">Sweden</option>
+                    <option value="">Norway</option>
+                    <option value="">Denmark</option>
+                    <option value="">Poland</option>
+                    <option value="">Germany</option>
+                </select>
+                <input class="LoginInput px-3 mt-4" type="password" placeholder="Password*">
+                <input class="LoginInput px-3 mt-4" type="password" placeholder="Confirm password*">
+                <button class="PillElement StartButton mt-4">Registration</button>
+                <div class="SmallLoginText mt-1 mb-5 pb-5 pb-md-0 d-flex flex-wrap justify-content-center">
+                    <p class="ContinueText GrayLoginText text-center w-100 mt-3 mb-0">Or log in with:</p>
+                    <div class="w-100 py-1">
+                        <button class="GoogleButton"><p class="mb-0">Continue with Google</p></button>
+                    </div>
+                    <div class="w-100 py-1">
+                        <button class="FacebookButton"><p class="mb-0">Continue with Facebook</p></button>
+                    </div>
                 </div>
             </form>
         </div>

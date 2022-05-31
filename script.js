@@ -308,3 +308,42 @@ LocationSearchPopup();
         });
     }
 ///////////
+
+//Register male/female checkboxes
+    $(".RegisterCheckboxGroup").change(function () {
+        $(".RegisterCheckboxGroup").not(this).prop('checked', false);
+    });
+///////////
+
+//Register dates
+window.onload = (event) =>
+{
+    document.querySelectorAll(".YearSelect").forEach(function(element)
+    {   
+        var CurrentYear = new Date().getFullYear();
+
+        for(i = CurrentYear - 1; i >= 1900; i--)
+        {
+            element.innerHTML += "<option value=" + i + ">" + i + "</option>";
+        }
+    });
+    document.querySelectorAll(".MonthSelect").forEach(function(element)
+    {   
+        const Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        for(i = 0; i < Months.length; i++)
+        {
+            element.innerHTML += "<option value=" + (i + 1) + ">" + Months[i] + "</option>";
+        }
+    });
+    document.querySelectorAll(".DaySelect").forEach(function(element)
+    {   
+        const Days = 31;
+
+        for(i = 1; i <= Days; i++)
+        {
+            element.innerHTML += "<option value=" + i + ">" + i + "</option>";
+        }
+    });
+}; 
+///////////

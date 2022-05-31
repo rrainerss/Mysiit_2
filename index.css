@@ -487,7 +487,7 @@
     }
     .SearchBoxButton:active > p::before, .SearchBoxButton:hover > p::before
     {
-        background-image: url("icons/loupew.png");
+        background-image: url("icons/loupe_white.png");
     }
     .FilterButton
     {
@@ -1202,7 +1202,7 @@
     }
 /*#endregion*/
 
-/*#region OVERLAY Login*/
+/*#region OVERLAY Login, Register*/
     .LoginOverlayContainer
     {
         color: var(--black);
@@ -1214,7 +1214,18 @@
         border-radius: 0.5rem;
         overflow: hidden;
     }
-    .LoginBox
+    .RegisterOverlayContainer
+    {
+        color: var(--black);
+        width: 32rem;
+        height: auto;
+        margin: auto;
+        margin-top: 5vh;
+        background-color: var(--bg);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    .LoginBox, .RegisterBox
     {
         width: 60%;
     }
@@ -1224,12 +1235,22 @@
         background-color: var(--purple);
         transition: all 150ms;
     }
+    .RegisterOverlayContainer .CloseOverlay
+    {
+        margin-right: calc(5vw + 1.5rem) !important;
+    }
     .CloseLoginOverlay:active, .CloseLoginOverlay:hover
     {
         background-color: var(--lightgray);
     }
     @media only screen and (max-width: 767px)
     {
+        .RegisterOverlayContainer
+        {
+            width: 90vw;
+            margin-top: 5vw;
+            margin-left: 5vw;
+        }
         .LoginOverlayContainer
         {
             position: fixed;
@@ -1238,7 +1259,7 @@
             margin-left: 5vw;
             height: calc(100vh - 3.3rem - 10vw);
         }
-        .LoginBox
+        .LoginBox, .RegisterBox
         {
             width: 80%;
         }
@@ -1247,22 +1268,45 @@
             right: 0rem;
         }
     }
-    .LoginBox > h3
+    .LoginBox h3, .RegisterBox > h3
     {
         font-weight: 700;
         color: var(--purple);
     }
-    .LoginBox .LoginInput
+    .LoginBox .LoginInput, .RegisterBox .LoginInput
     {
         width: 100%;
         height: 2.6rem;
         background-color: var(--lightbg);
         border: 1px solid var(--bordergray);
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         font-size: 0.75rem;
+        font-weight: 500;
     }::placeholder
     {
         color: var(--lightgray);
+    }
+    .RegisterSelect
+    {
+        color: var(--lightgray);
+    }
+    .RegisterSelect
+    {
+        -webkit-appearance: none;
+        -moz-appearance : none;
+        background-image: url(/icons/down_arrow_gray.png);
+        background-size: 11px 11px;
+        background-position: center right 0.1rem;
+        background-repeat: no-repeat;
+    }
+    .YearSelect, .MonthSelect, .DaySelect
+    {
+        width: 32% !important;
+    }
+    .RegisterSelect option:disabled
+    {
+        color: var(--lightergray);
+        font-weight: 500;
     }
     /*----------------------------------------*/
     .SmallLoginText
